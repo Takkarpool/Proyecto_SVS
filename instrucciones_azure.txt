@@ -1,0 +1,9 @@
+Instalacion de la cli de azure
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+Linkeado de la cuenta
+    az login
+        Abrir la pagina web que os da (puede que se abra sola) y loggearos
+
+benchmark prueba azure
+    ./pkb.py --cloud=Azure --machine_type=Standard_A0 --benchmarks=ping
