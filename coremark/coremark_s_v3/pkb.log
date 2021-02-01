@@ -1,0 +1,2540 @@
+2021-01-20 12:30:59,135 414351e2 MainThread pkb.py:1135 INFO     PerfKitBenchmarker version: v1.12.0-2274-g57e60ab9
+2021-01-20 12:30:59,136 414351e2 MainThread pkb.py:1109 INFO     Flag values:
+--cloud=Azure
+--benchmarks=coremark
+2021-01-20 12:30:59,226 414351e2 MainThread vm_util.py:353 INFO     Running: ssh-keygen -t rsa -N  -m PEM -q -f /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile
+2021-01-20 12:30:59,374 414351e2 MainThread vm_util.py:407 DEBUG    Ran: {ssh-keygen -t rsa -N  -m PEM -q -f /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile}
+ReturnCode:0
+STDOUT: 
+STDERR: 
+2021-01-20 12:30:59,375 414351e2 MainThread pkb.py:1177 INFO     Setting --max_concurrent_threads=200.
+2021-01-20 12:30:59,391 414351e2 MainThread __init__.py:253 WARNING  The key "flags" was not in the default config, but was in user overrides. This may indicate a typo.
+2021-01-20 12:30:59,393 414351e2 MainThread publisher.py:874 DEBUG    Using publishers: [<LogPublisher logger=<RootLogger root (DEBUG)> level=20>, <PrettyPrintStreamPublisher stream=<_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_results.json" mode="w">]
+2021-01-20 12:30:59,393 414351e2 MainThread publisher.py:874 DEBUG    Using publishers: [<LogPublisher logger=<RootLogger root (DEBUG)> level=20>, <PrettyPrintStreamPublisher stream=<_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>>, <NewlineDelimitedJSONPublisher file_path="/tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_results.json" mode="w">]
+2021-01-20 12:30:59,394 414351e2 MainThread coremark(1/1) pkb.py:621 INFO     Provisioning resources for benchmark coremark
+2021-01-20 12:30:59,395 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az group create --name pkb414351e2-coremark0 --location eastus2 --tags benchmark=coremark benchmark_uid=coremark0 create_time_utc=20210120t113059z owner=mario perfkit_uuid=414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb timeout_utc=20210120t153059z
+2021-01-20 12:31:01,076 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az group create --name pkb414351e2-coremark0 --location eastus2 --tags benchmark=coremark benchmark_uid=coremark0 create_time_utc=20210120t113059z owner=mario perfkit_uuid=414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb timeout_utc=20210120t153059z}
+ReturnCode:0
+STDOUT: {
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0",
+  "location": "eastus2",
+  "managedBy": null,
+  "name": "pkb414351e2-coremark0",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113059z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153059z"
+  },
+  "type": "Microsoft.Resources/resourceGroups"
+}
+
+STDERR: 
+2021-01-20 12:31:01,076 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az group show --name pkb414351e2-coremark0
+2021-01-20 12:31:01,808 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az group show --name pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0",
+  "location": "eastus2",
+  "managedBy": null,
+  "name": "pkb414351e2-coremark0",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113059z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153059z"
+  },
+  "type": "Microsoft.Resources/resourceGroups"
+}
+
+STDERR: 
+2021-01-20 12:31:01,809 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az storage account create --kind Storage --sku Standard_LRS --name pkb414351e2storage0 --tags benchmark=coremark benchmark_uid=coremark0 create_time_utc=20210120t113101z owner=mario perfkit_uuid=414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb timeout_utc=20210120t153101z --resource-group pkb414351e2-coremark0 --location eastus2
+2021-01-20 12:31:23,808 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az storage account create --kind Storage --sku Standard_LRS --name pkb414351e2storage0 --tags benchmark=coremark benchmark_uid=coremark0 create_time_utc=20210120t113101z owner=mario perfkit_uuid=414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb timeout_utc=20210120t153101z --resource-group pkb414351e2-coremark0 --location eastus2}
+ReturnCode:0
+STDOUT: {
+  "accessTier": null,
+  "allowBlobPublicAccess": null,
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2021-01-20T11:31:05.187276+00:00",
+  "customDomain": null,
+  "enableHttpsTrafficOnly": true,
+  "encryption": {
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2021-01-20T11:31:05.265410+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2021-01-20T11:31:05.265410+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Storage/storageAccounts/pkb414351e2storage0",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "Storage",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "eastus2",
+  "minimumTlsVersion": null,
+  "name": "pkb414351e2storage0",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://pkb414351e2storage0.blob.core.windows.net/",
+    "dfs": null,
+    "file": "https://pkb414351e2storage0.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://pkb414351e2storage0.queue.core.windows.net/",
+    "table": "https://pkb414351e2storage0.table.core.windows.net/",
+    "web": null
+  },
+  "primaryLocation": "eastus2",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "routingPreference": null,
+  "secondaryEndpoints": null,
+  "secondaryLocation": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": null,
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113101z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153101z"
+  },
+  "type": "Microsoft.Storage/storageAccounts"
+}
+
+STDERR: 
+2021-01-20 12:31:23,808 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az storage account show --output json --name pkb414351e2storage0 --resource-group pkb414351e2-coremark0
+2021-01-20 12:31:25,227 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az storage account show --output json --name pkb414351e2storage0 --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "accessTier": null,
+  "allowBlobPublicAccess": null,
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2021-01-20T11:31:05.187276+00:00",
+  "customDomain": null,
+  "enableHttpsTrafficOnly": true,
+  "encryption": {
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2021-01-20T11:31:05.265410+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2021-01-20T11:31:05.265410+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Storage/storageAccounts/pkb414351e2storage0",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "Storage",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "eastus2",
+  "minimumTlsVersion": null,
+  "name": "pkb414351e2storage0",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://pkb414351e2storage0.blob.core.windows.net/",
+    "dfs": null,
+    "file": "https://pkb414351e2storage0.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://pkb414351e2storage0.queue.core.windows.net/",
+    "table": "https://pkb414351e2storage0.table.core.windows.net/",
+    "web": null
+  },
+  "primaryLocation": "eastus2",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "routingPreference": null,
+  "secondaryEndpoints": null,
+  "secondaryLocation": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": null,
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113101z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153101z"
+  },
+  "type": "Microsoft.Storage/storageAccounts"
+}
+
+STDERR: 
+2021-01-20 12:31:25,227 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az storage account show-connection-string --name pkb414351e2storage0 --resource-group pkb414351e2-coremark0 --output json
+2021-01-20 12:31:26,676 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az storage account show-connection-string --name pkb414351e2storage0 --resource-group pkb414351e2-coremark0 --output json}
+ReturnCode:0
+STDOUT: {
+  "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=pkb414351e2storage0;AccountKey=22TEaZkG0BFATPuIklMksknu9jX6LRz9y3I08KExlNEeaCi6jU+0EgRYSQVfI/0YwCs/qeH3oOGeikZy1YhrHw=="
+}
+
+STDERR: 
+2021-01-20 12:31:26,676 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az storage account keys list --account-name pkb414351e2storage0 --resource-group pkb414351e2-coremark0 --output json
+2021-01-20 12:31:28,081 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az storage account keys list --account-name pkb414351e2storage0 --resource-group pkb414351e2-coremark0 --output json}
+ReturnCode:0
+STDOUT: [
+  {
+    "keyName": "key1",
+    "permissions": "FULL",
+    "value": "22TEaZkG0BFATPuIklMksknu9jX6LRz9y3I08KExlNEeaCi6jU+0EgRYSQVfI/0YwCs/qeH3oOGeikZy1YhrHw=="
+  },
+  {
+    "keyName": "key2",
+    "permissions": "FULL",
+    "value": "7/v2p+eMuox1PIYvv+KfOqYPhW3Z4ihGMPDQ6tgBqZCv0Fq0h3JkqzTLmYJnHkgXv6fdJfM4skvt/ytEZSVAnA=="
+  }
+]
+
+STDERR: 
+2021-01-20 12:31:28,081 414351e2 Thread-2 coremark(1/1) azure_network.py:308 INFO     Creating 1 Azure subnets in eastus2
+2021-01-20 12:31:28,081 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az network vnet create --location eastus2 --name pkb414351e2-coremark0-eastus2-vnet --address-prefixes 10.0.0.0/24 --resource-group pkb414351e2-coremark0
+2021-01-20 12:31:35,892 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network vnet create --location eastus2 --name pkb414351e2-coremark0-eastus2-vnet --address-prefixes 10.0.0.0/24 --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "newVNet": {
+    "addressSpace": {
+      "addressPrefixes": [
+        "10.0.0.0/24"
+      ]
+    },
+    "bgpCommunities": null,
+    "ddosProtectionPlan": null,
+    "dhcpOptions": {
+      "dnsServers": []
+    },
+    "enableDdosProtection": false,
+    "enableVmProtection": false,
+    "etag": "W/\"cf68e8d1-a0cc-430a-8a18-757477c6da15\"",
+    "extendedLocation": null,
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet",
+    "ipAllocations": null,
+    "location": "eastus2",
+    "name": "pkb414351e2-coremark0-eastus2-vnet",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "pkb414351e2-coremark0",
+    "resourceGuid": "f4dcdb7f-c8db-4a19-b788-0a7dcc4fc5ea",
+    "subnets": [],
+    "tags": {},
+    "type": "Microsoft.Network/virtualNetworks",
+    "virtualNetworkPeerings": []
+  }
+}
+
+STDERR: 
+2021-01-20 12:31:35,892 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az network vnet subnet create --vnet-name pkb414351e2-coremark0-eastus2-vnet --address-prefix 10.0.0.0/24 --name pkb414351e2-coremark0-eastus2-vnet-subnet --resource-group pkb414351e2-coremark0
+2021-01-20 12:31:40,649 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network vnet subnet create --vnet-name pkb414351e2-coremark0-eastus2-vnet --address-prefix 10.0.0.0/24 --name pkb414351e2-coremark0-eastus2-vnet-subnet --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "addressPrefix": "10.0.0.0/24",
+  "addressPrefixes": null,
+  "delegations": [],
+  "etag": "W/\"254e9d3a-bc4c-4e93-a2a7-fda631400ddf\"",
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet/subnets/pkb414351e2-coremark0-eastus2-vnet-subnet",
+  "ipAllocations": null,
+  "ipConfigurationProfiles": null,
+  "ipConfigurations": null,
+  "name": "pkb414351e2-coremark0-eastus2-vnet-subnet",
+  "natGateway": null,
+  "networkSecurityGroup": null,
+  "privateEndpointNetworkPolicies": "Enabled",
+  "privateEndpoints": null,
+  "privateLinkServiceNetworkPolicies": "Enabled",
+  "provisioningState": "Succeeded",
+  "purpose": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceNavigationLinks": null,
+  "routeTable": null,
+  "serviceAssociationLinks": null,
+  "serviceEndpointPolicies": null,
+  "serviceEndpoints": null,
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
+
+STDERR: 
+2021-01-20 12:31:40,650 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az network vnet subnet show --vnet-name pkb414351e2-coremark0-eastus2-vnet --output json --name pkb414351e2-coremark0-eastus2-vnet-subnet --resource-group pkb414351e2-coremark0
+2021-01-20 12:31:41,675 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network vnet subnet show --vnet-name pkb414351e2-coremark0-eastus2-vnet --output json --name pkb414351e2-coremark0-eastus2-vnet-subnet --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "addressPrefix": "10.0.0.0/24",
+  "addressPrefixes": null,
+  "delegations": [],
+  "etag": "W/\"254e9d3a-bc4c-4e93-a2a7-fda631400ddf\"",
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet/subnets/pkb414351e2-coremark0-eastus2-vnet-subnet",
+  "ipAllocations": null,
+  "ipConfigurationProfiles": null,
+  "ipConfigurations": null,
+  "name": "pkb414351e2-coremark0-eastus2-vnet-subnet",
+  "natGateway": null,
+  "networkSecurityGroup": null,
+  "privateEndpointNetworkPolicies": "Enabled",
+  "privateEndpoints": null,
+  "privateLinkServiceNetworkPolicies": "Enabled",
+  "provisioningState": "Succeeded",
+  "purpose": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceNavigationLinks": null,
+  "routeTable": null,
+  "serviceAssociationLinks": null,
+  "serviceEndpointPolicies": null,
+  "serviceEndpoints": null,
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
+
+STDERR: 
+2021-01-20 12:31:41,675 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az network nsg create --location eastus2 --name pkb414351e2-coremark0-eastus2-vnet-subnet-nsg --resource-group pkb414351e2-coremark0
+2021-01-20 12:31:49,726 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network nsg create --location eastus2 --name pkb414351e2-coremark0-eastus2-vnet-subnet-nsg --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "NewNSG": {
+    "defaultSecurityRules": [
+      {
+        "access": "Allow",
+        "description": "Allow inbound traffic from all VMs in VNET",
+        "destinationAddressPrefix": "VirtualNetwork",
+        "destinationAddressPrefixes": [],
+        "destinationApplicationSecurityGroups": null,
+        "destinationPortRange": "*",
+        "destinationPortRanges": [],
+        "direction": "Inbound",
+        "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowVnetInBound",
+        "name": "AllowVnetInBound",
+        "priority": 65000,
+        "protocol": "*",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "sourceAddressPrefix": "VirtualNetwork",
+        "sourceAddressPrefixes": [],
+        "sourceApplicationSecurityGroups": null,
+        "sourcePortRange": "*",
+        "sourcePortRanges": [],
+        "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+      },
+      {
+        "access": "Allow",
+        "description": "Allow inbound traffic from azure load balancer",
+        "destinationAddressPrefix": "*",
+        "destinationAddressPrefixes": [],
+        "destinationApplicationSecurityGroups": null,
+        "destinationPortRange": "*",
+        "destinationPortRanges": [],
+        "direction": "Inbound",
+        "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+        "name": "AllowAzureLoadBalancerInBound",
+        "priority": 65001,
+        "protocol": "*",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "sourceAddressPrefix": "AzureLoadBalancer",
+        "sourceAddressPrefixes": [],
+        "sourceApplicationSecurityGroups": null,
+        "sourcePortRange": "*",
+        "sourcePortRanges": [],
+        "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+      },
+      {
+        "access": "Deny",
+        "description": "Deny all inbound traffic",
+        "destinationAddressPrefix": "*",
+        "destinationAddressPrefixes": [],
+        "destinationApplicationSecurityGroups": null,
+        "destinationPortRange": "*",
+        "destinationPortRanges": [],
+        "direction": "Inbound",
+        "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/DenyAllInBound",
+        "name": "DenyAllInBound",
+        "priority": 65500,
+        "protocol": "*",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "sourceAddressPrefix": "*",
+        "sourceAddressPrefixes": [],
+        "sourceApplicationSecurityGroups": null,
+        "sourcePortRange": "*",
+        "sourcePortRanges": [],
+        "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+      },
+      {
+        "access": "Allow",
+        "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+        "destinationAddressPrefix": "VirtualNetwork",
+        "destinationAddressPrefixes": [],
+        "destinationApplicationSecurityGroups": null,
+        "destinationPortRange": "*",
+        "destinationPortRanges": [],
+        "direction": "Outbound",
+        "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowVnetOutBound",
+        "name": "AllowVnetOutBound",
+        "priority": 65000,
+        "protocol": "*",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "sourceAddressPrefix": "VirtualNetwork",
+        "sourceAddressPrefixes": [],
+        "sourceApplicationSecurityGroups": null,
+        "sourcePortRange": "*",
+        "sourcePortRanges": [],
+        "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+      },
+      {
+        "access": "Allow",
+        "description": "Allow outbound traffic from all VMs to Internet",
+        "destinationAddressPrefix": "Internet",
+        "destinationAddressPrefixes": [],
+        "destinationApplicationSecurityGroups": null,
+        "destinationPortRange": "*",
+        "destinationPortRanges": [],
+        "direction": "Outbound",
+        "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowInternetOutBound",
+        "name": "AllowInternetOutBound",
+        "priority": 65001,
+        "protocol": "*",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "sourceAddressPrefix": "*",
+        "sourceAddressPrefixes": [],
+        "sourceApplicationSecurityGroups": null,
+        "sourcePortRange": "*",
+        "sourcePortRanges": [],
+        "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+      },
+      {
+        "access": "Deny",
+        "description": "Deny all outbound traffic",
+        "destinationAddressPrefix": "*",
+        "destinationAddressPrefixes": [],
+        "destinationApplicationSecurityGroups": null,
+        "destinationPortRange": "*",
+        "destinationPortRanges": [],
+        "direction": "Outbound",
+        "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/DenyAllOutBound",
+        "name": "DenyAllOutBound",
+        "priority": 65500,
+        "protocol": "*",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "sourceAddressPrefix": "*",
+        "sourceAddressPrefixes": [],
+        "sourceApplicationSecurityGroups": null,
+        "sourcePortRange": "*",
+        "sourcePortRanges": [],
+        "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+      }
+    ],
+    "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+    "flowLogs": null,
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg",
+    "location": "eastus2",
+    "name": "pkb414351e2-coremark0-eastus2-vnet-subnet-nsg",
+    "networkInterfaces": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "pkb414351e2-coremark0",
+    "resourceGuid": "e56804ba-5e53-4265-90d4-29b8f9fcc640",
+    "securityRules": [],
+    "subnets": null,
+    "tags": null,
+    "type": "Microsoft.Network/networkSecurityGroups"
+  }
+}
+
+STDERR: 
+2021-01-20 12:31:49,726 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az network nsg show --output json --name pkb414351e2-coremark0-eastus2-vnet-subnet-nsg --resource-group pkb414351e2-coremark0
+2021-01-20 12:31:50,699 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network nsg show --output json --name pkb414351e2-coremark0-eastus2-vnet-subnet-nsg --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "defaultSecurityRules": [
+    {
+      "access": "Allow",
+      "description": "Allow inbound traffic from all VMs in VNET",
+      "destinationAddressPrefix": "VirtualNetwork",
+      "destinationAddressPrefixes": [],
+      "destinationApplicationSecurityGroups": null,
+      "destinationPortRange": "*",
+      "destinationPortRanges": [],
+      "direction": "Inbound",
+      "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowVnetInBound",
+      "name": "AllowVnetInBound",
+      "priority": 65000,
+      "protocol": "*",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "pkb414351e2-coremark0",
+      "sourceAddressPrefix": "VirtualNetwork",
+      "sourceAddressPrefixes": [],
+      "sourceApplicationSecurityGroups": null,
+      "sourcePortRange": "*",
+      "sourcePortRanges": [],
+      "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+    },
+    {
+      "access": "Allow",
+      "description": "Allow inbound traffic from azure load balancer",
+      "destinationAddressPrefix": "*",
+      "destinationAddressPrefixes": [],
+      "destinationApplicationSecurityGroups": null,
+      "destinationPortRange": "*",
+      "destinationPortRanges": [],
+      "direction": "Inbound",
+      "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+      "name": "AllowAzureLoadBalancerInBound",
+      "priority": 65001,
+      "protocol": "*",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "pkb414351e2-coremark0",
+      "sourceAddressPrefix": "AzureLoadBalancer",
+      "sourceAddressPrefixes": [],
+      "sourceApplicationSecurityGroups": null,
+      "sourcePortRange": "*",
+      "sourcePortRanges": [],
+      "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+    },
+    {
+      "access": "Deny",
+      "description": "Deny all inbound traffic",
+      "destinationAddressPrefix": "*",
+      "destinationAddressPrefixes": [],
+      "destinationApplicationSecurityGroups": null,
+      "destinationPortRange": "*",
+      "destinationPortRanges": [],
+      "direction": "Inbound",
+      "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/DenyAllInBound",
+      "name": "DenyAllInBound",
+      "priority": 65500,
+      "protocol": "*",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "pkb414351e2-coremark0",
+      "sourceAddressPrefix": "*",
+      "sourceAddressPrefixes": [],
+      "sourceApplicationSecurityGroups": null,
+      "sourcePortRange": "*",
+      "sourcePortRanges": [],
+      "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+    },
+    {
+      "access": "Allow",
+      "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+      "destinationAddressPrefix": "VirtualNetwork",
+      "destinationAddressPrefixes": [],
+      "destinationApplicationSecurityGroups": null,
+      "destinationPortRange": "*",
+      "destinationPortRanges": [],
+      "direction": "Outbound",
+      "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowVnetOutBound",
+      "name": "AllowVnetOutBound",
+      "priority": 65000,
+      "protocol": "*",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "pkb414351e2-coremark0",
+      "sourceAddressPrefix": "VirtualNetwork",
+      "sourceAddressPrefixes": [],
+      "sourceApplicationSecurityGroups": null,
+      "sourcePortRange": "*",
+      "sourcePortRanges": [],
+      "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+    },
+    {
+      "access": "Allow",
+      "description": "Allow outbound traffic from all VMs to Internet",
+      "destinationAddressPrefix": "Internet",
+      "destinationAddressPrefixes": [],
+      "destinationApplicationSecurityGroups": null,
+      "destinationPortRange": "*",
+      "destinationPortRanges": [],
+      "direction": "Outbound",
+      "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/AllowInternetOutBound",
+      "name": "AllowInternetOutBound",
+      "priority": 65001,
+      "protocol": "*",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "pkb414351e2-coremark0",
+      "sourceAddressPrefix": "*",
+      "sourceAddressPrefixes": [],
+      "sourceApplicationSecurityGroups": null,
+      "sourcePortRange": "*",
+      "sourcePortRanges": [],
+      "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+    },
+    {
+      "access": "Deny",
+      "description": "Deny all outbound traffic",
+      "destinationAddressPrefix": "*",
+      "destinationAddressPrefixes": [],
+      "destinationApplicationSecurityGroups": null,
+      "destinationPortRange": "*",
+      "destinationPortRanges": [],
+      "direction": "Outbound",
+      "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/defaultSecurityRules/DenyAllOutBound",
+      "name": "DenyAllOutBound",
+      "priority": 65500,
+      "protocol": "*",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "pkb414351e2-coremark0",
+      "sourceAddressPrefix": "*",
+      "sourceAddressPrefixes": [],
+      "sourceApplicationSecurityGroups": null,
+      "sourcePortRange": "*",
+      "sourcePortRanges": [],
+      "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules"
+    }
+  ],
+  "etag": "W/\"df59a9c6-8a5b-426f-814a-cf804fa30ab3\"",
+  "flowLogs": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg",
+  "location": "eastus2",
+  "name": "pkb414351e2-coremark0-eastus2-vnet-subnet-nsg",
+  "networkInterfaces": null,
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceGuid": "e56804ba-5e53-4265-90d4-29b8f9fcc640",
+  "securityRules": [],
+  "subnets": null,
+  "tags": null,
+  "type": "Microsoft.Network/networkSecurityGroups"
+}
+
+STDERR: 
+2021-01-20 12:31:50,700 414351e2 Thread-2 coremark(1/1) vm_util.py:353 INFO     Running: az network vnet subnet update --name pkb414351e2-coremark0-eastus2-vnet-subnet --network-security-group pkb414351e2-coremark0-eastus2-vnet-subnet-nsg --resource-group pkb414351e2-coremark0 --vnet-name pkb414351e2-coremark0-eastus2-vnet
+2021-01-20 12:31:55,677 414351e2 Thread-2 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network vnet subnet update --name pkb414351e2-coremark0-eastus2-vnet-subnet --network-security-group pkb414351e2-coremark0-eastus2-vnet-subnet-nsg --resource-group pkb414351e2-coremark0 --vnet-name pkb414351e2-coremark0-eastus2-vnet}
+ReturnCode:0
+STDOUT: {
+  "addressPrefix": "10.0.0.0/24",
+  "addressPrefixes": null,
+  "delegations": [],
+  "etag": "W/\"1922ac6d-a80a-4eb4-b733-b38bb80f896b\"",
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet/subnets/pkb414351e2-coremark0-eastus2-vnet-subnet",
+  "ipAllocations": null,
+  "ipConfigurationProfiles": null,
+  "ipConfigurations": null,
+  "name": "pkb414351e2-coremark0-eastus2-vnet-subnet",
+  "natGateway": null,
+  "networkSecurityGroup": {
+    "defaultSecurityRules": null,
+    "etag": null,
+    "flowLogs": null,
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg",
+    "location": null,
+    "name": null,
+    "networkInterfaces": null,
+    "provisioningState": null,
+    "resourceGroup": "pkb414351e2-coremark0",
+    "resourceGuid": null,
+    "securityRules": null,
+    "subnets": null,
+    "tags": null,
+    "type": null
+  },
+  "privateEndpointNetworkPolicies": "Enabled",
+  "privateEndpoints": null,
+  "privateLinkServiceNetworkPolicies": "Enabled",
+  "provisioningState": "Succeeded",
+  "purpose": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceNavigationLinks": null,
+  "routeTable": null,
+  "serviceAssociationLinks": null,
+  "serviceEndpointPolicies": null,
+  "serviceEndpoints": null,
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
+
+STDERR: 
+2021-01-20 12:31:55,717 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network public-ip create --location eastus2 --name pkb-414351e2-0-public-ip --resource-group pkb414351e2-coremark0
+2021-01-20 12:32:01,408 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network public-ip create --location eastus2 --name pkb-414351e2-0-public-ip --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "publicIp": {
+    "ddosSettings": null,
+    "dnsSettings": null,
+    "etag": "W/\"d1fdd3bb-5503-42d6-9362-3d0a28df8c4c\"",
+    "extendedLocation": null,
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/publicIPAddresses/pkb-414351e2-0-public-ip",
+    "idleTimeoutInMinutes": 4,
+    "ipAddress": null,
+    "ipConfiguration": null,
+    "ipTags": [],
+    "location": "eastus2",
+    "name": "pkb-414351e2-0-public-ip",
+    "provisioningState": "Succeeded",
+    "publicIpAddressVersion": "IPv4",
+    "publicIpAllocationMethod": "Dynamic",
+    "publicIpPrefix": null,
+    "resourceGroup": "pkb414351e2-coremark0",
+    "resourceGuid": "af62f98f-8bea-421d-8101-a5df668a7afc",
+    "sku": {
+      "name": "Basic",
+      "tier": "Regional"
+    },
+    "tags": null,
+    "type": "Microsoft.Network/publicIPAddresses",
+    "zones": null
+  }
+}
+
+STDERR: 
+2021-01-20 12:32:01,408 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network public-ip show --output json --name pkb-414351e2-0-public-ip --resource-group pkb414351e2-coremark0
+2021-01-20 12:32:02,486 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network public-ip show --output json --name pkb-414351e2-0-public-ip --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "ddosSettings": null,
+  "dnsSettings": null,
+  "etag": "W/\"d1fdd3bb-5503-42d6-9362-3d0a28df8c4c\"",
+  "extendedLocation": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/publicIPAddresses/pkb-414351e2-0-public-ip",
+  "idleTimeoutInMinutes": 4,
+  "ipAddress": null,
+  "ipConfiguration": null,
+  "ipTags": [],
+  "location": "eastus2",
+  "name": "pkb-414351e2-0-public-ip",
+  "provisioningState": "Succeeded",
+  "publicIpAddressVersion": "IPv4",
+  "publicIpAllocationMethod": "Dynamic",
+  "publicIpPrefix": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceGuid": "af62f98f-8bea-421d-8101-a5df668a7afc",
+  "sku": {
+    "name": "Basic",
+    "tier": "Regional"
+  },
+  "tags": null,
+  "type": "Microsoft.Network/publicIPAddresses",
+  "zones": null
+}
+
+STDERR: 
+2021-01-20 12:32:02,486 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network nic create --location eastus2 --vnet-name pkb414351e2-coremark0-eastus2-vnet --subnet pkb414351e2-coremark0-eastus2-vnet-subnet --public-ip-address pkb-414351e2-0-public-ip --name pkb-414351e2-0-nic --resource-group pkb414351e2-coremark0
+2021-01-20 12:32:37,482 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network nic create --location eastus2 --vnet-name pkb414351e2-coremark0-eastus2-vnet --subnet pkb414351e2-coremark0-eastus2-vnet-subnet --public-ip-address pkb-414351e2-0-public-ip --name pkb-414351e2-0-nic --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "NewNIC": {
+    "dnsSettings": {
+      "appliedDnsServers": [],
+      "dnsServers": [],
+      "internalDnsNameLabel": null,
+      "internalDomainNameSuffix": "p5n3z3g1zamuvn2ibj42yt4f3c.cx.internal.cloudapp.net",
+      "internalFqdn": null
+    },
+    "dscpConfiguration": null,
+    "enableAcceleratedNetworking": false,
+    "enableIpForwarding": false,
+    "etag": "W/\"7073b6aa-586b-4a40-8a88-1263610d5b8f\"",
+    "extendedLocation": null,
+    "hostedWorkloads": [],
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic",
+    "ipConfigurations": [
+      {
+        "applicationGatewayBackendAddressPools": null,
+        "applicationSecurityGroups": null,
+        "etag": "W/\"7073b6aa-586b-4a40-8a88-1263610d5b8f\"",
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic/ipConfigurations/ipconfig1",
+        "loadBalancerBackendAddressPools": null,
+        "loadBalancerInboundNatRules": null,
+        "name": "ipconfig1",
+        "primary": true,
+        "privateIpAddress": "10.0.0.4",
+        "privateIpAddressVersion": "IPv4",
+        "privateIpAllocationMethod": "Dynamic",
+        "privateLinkConnectionProperties": null,
+        "provisioningState": "Succeeded",
+        "publicIpAddress": {
+          "ddosSettings": null,
+          "dnsSettings": null,
+          "etag": null,
+          "extendedLocation": null,
+          "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/publicIPAddresses/pkb-414351e2-0-public-ip",
+          "idleTimeoutInMinutes": null,
+          "ipAddress": null,
+          "ipConfiguration": null,
+          "ipTags": null,
+          "location": null,
+          "name": null,
+          "provisioningState": null,
+          "publicIpAddressVersion": null,
+          "publicIpAllocationMethod": null,
+          "publicIpPrefix": null,
+          "resourceGroup": "pkb414351e2-coremark0",
+          "resourceGuid": null,
+          "sku": null,
+          "tags": null,
+          "type": null,
+          "zones": null
+        },
+        "resourceGroup": "pkb414351e2-coremark0",
+        "subnet": {
+          "addressPrefix": null,
+          "addressPrefixes": null,
+          "delegations": null,
+          "etag": null,
+          "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet/subnets/pkb414351e2-coremark0-eastus2-vnet-subnet",
+          "ipAllocations": null,
+          "ipConfigurationProfiles": null,
+          "ipConfigurations": null,
+          "name": null,
+          "natGateway": null,
+          "networkSecurityGroup": null,
+          "privateEndpointNetworkPolicies": null,
+          "privateEndpoints": null,
+          "privateLinkServiceNetworkPolicies": null,
+          "provisioningState": null,
+          "purpose": null,
+          "resourceGroup": "pkb414351e2-coremark0",
+          "resourceNavigationLinks": null,
+          "routeTable": null,
+          "serviceAssociationLinks": null,
+          "serviceEndpointPolicies": null,
+          "serviceEndpoints": null
+        },
+        "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+        "virtualNetworkTaps": null
+      }
+    ],
+    "location": "eastus2",
+    "macAddress": null,
+    "name": "pkb-414351e2-0-nic",
+    "networkSecurityGroup": null,
+    "primary": null,
+    "privateEndpoint": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "pkb414351e2-coremark0",
+    "resourceGuid": "7a58c9f4-3743-4c94-8f0d-f666dfd45207",
+    "tags": null,
+    "tapConfigurations": [],
+    "type": "Microsoft.Network/networkInterfaces",
+    "virtualMachine": null
+  }
+}
+
+STDERR: 
+2021-01-20 12:32:37,482 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network nic show --output json --name pkb-414351e2-0-nic --resource-group pkb414351e2-coremark0
+2021-01-20 12:32:38,487 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network nic show --output json --name pkb-414351e2-0-nic --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "dnsSettings": {
+    "appliedDnsServers": [],
+    "dnsServers": [],
+    "internalDnsNameLabel": null,
+    "internalDomainNameSuffix": "p5n3z3g1zamuvn2ibj42yt4f3c.cx.internal.cloudapp.net",
+    "internalFqdn": null
+  },
+  "dscpConfiguration": null,
+  "enableAcceleratedNetworking": false,
+  "enableIpForwarding": false,
+  "etag": "W/\"7073b6aa-586b-4a40-8a88-1263610d5b8f\"",
+  "extendedLocation": null,
+  "hostedWorkloads": [],
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic",
+  "ipConfigurations": [
+    {
+      "applicationGatewayBackendAddressPools": null,
+      "applicationSecurityGroups": null,
+      "etag": "W/\"7073b6aa-586b-4a40-8a88-1263610d5b8f\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic/ipConfigurations/ipconfig1",
+      "loadBalancerBackendAddressPools": null,
+      "loadBalancerInboundNatRules": null,
+      "name": "ipconfig1",
+      "primary": true,
+      "privateIpAddress": "10.0.0.4",
+      "privateIpAddressVersion": "IPv4",
+      "privateIpAllocationMethod": "Dynamic",
+      "privateLinkConnectionProperties": null,
+      "provisioningState": "Succeeded",
+      "publicIpAddress": {
+        "ddosSettings": null,
+        "dnsSettings": null,
+        "etag": null,
+        "extendedLocation": null,
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/publicIPAddresses/pkb-414351e2-0-public-ip",
+        "idleTimeoutInMinutes": null,
+        "ipAddress": null,
+        "ipConfiguration": null,
+        "ipTags": null,
+        "location": null,
+        "name": null,
+        "provisioningState": null,
+        "publicIpAddressVersion": null,
+        "publicIpAllocationMethod": null,
+        "publicIpPrefix": null,
+        "resourceGroup": "pkb414351e2-coremark0",
+        "resourceGuid": null,
+        "sku": null,
+        "tags": null,
+        "type": null,
+        "zones": null
+      },
+      "resourceGroup": "pkb414351e2-coremark0",
+      "subnet": {
+        "addressPrefix": null,
+        "addressPrefixes": null,
+        "delegations": null,
+        "etag": null,
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet/subnets/pkb414351e2-coremark0-eastus2-vnet-subnet",
+        "ipAllocations": null,
+        "ipConfigurationProfiles": null,
+        "ipConfigurations": null,
+        "name": null,
+        "natGateway": null,
+        "networkSecurityGroup": null,
+        "privateEndpointNetworkPolicies": null,
+        "privateEndpoints": null,
+        "privateLinkServiceNetworkPolicies": null,
+        "provisioningState": null,
+        "purpose": null,
+        "resourceGroup": "pkb414351e2-coremark0",
+        "resourceNavigationLinks": null,
+        "routeTable": null,
+        "serviceAssociationLinks": null,
+        "serviceEndpointPolicies": null,
+        "serviceEndpoints": null
+      },
+      "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+      "virtualNetworkTaps": null
+    }
+  ],
+  "location": "eastus2",
+  "macAddress": null,
+  "name": "pkb-414351e2-0-nic",
+  "networkSecurityGroup": null,
+  "primary": null,
+  "privateEndpoint": null,
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceGuid": "7a58c9f4-3743-4c94-8f0d-f666dfd45207",
+  "tags": null,
+  "tapConfigurations": [],
+  "type": "Microsoft.Network/networkInterfaces",
+  "virtualMachine": null
+}
+
+STDERR: 
+2021-01-20 12:32:38,488 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az vm create --location eastus2 --image Canonical:UbuntuServer:16.04-LTS:latest --size Standard_D2s_v3 --admin-username perfkit --storage-sku Standard_LRS --name pkb-414351e2-0 --resource-group pkb414351e2-coremark0 --nics pkb-414351e2-0-nic --tags benchmark=coremark benchmark_uid=coremark0 create_time_utc=20210120t113238z owner=mario perfkit_uuid=414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb timeout_utc=20210120t153238z --ssh-key-value /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile.pub
+2021-01-20 12:33:46,850 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az vm create --location eastus2 --image Canonical:UbuntuServer:16.04-LTS:latest --size Standard_D2s_v3 --admin-username perfkit --storage-sku Standard_LRS --name pkb-414351e2-0 --resource-group pkb414351e2-coremark0 --nics pkb-414351e2-0-nic --tags benchmark=coremark benchmark_uid=coremark0 create_time_utc=20210120t113238z owner=mario perfkit_uuid=414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb timeout_utc=20210120t153238z --ssh-key-value /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile.pub}
+ReturnCode:0
+STDOUT: {
+  "fqdns": "",
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/virtualMachines/pkb-414351e2-0",
+  "location": "eastus2",
+  "macAddress": "00-0D-3A-04-D0-74",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "40.70.60.143",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "zones": ""
+}
+
+STDERR: 
+2021-01-20 12:33:46,850 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az vm show --output json --name pkb-414351e2-0 --resource-group pkb414351e2-coremark0
+2021-01-20 12:33:47,906 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az vm show --output json --name pkb-414351e2-0 --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "additionalCapabilities": null,
+  "availabilitySet": null,
+  "billingProfile": null,
+  "diagnosticsProfile": null,
+  "evictionPolicy": null,
+  "extensionsTimeBudget": null,
+  "hardwareProfile": {
+    "vmSize": "Standard_D2s_v3"
+  },
+  "host": null,
+  "hostGroup": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/virtualMachines/pkb-414351e2-0",
+  "identity": null,
+  "instanceView": null,
+  "licenseType": null,
+  "location": "eastus2",
+  "name": "pkb-414351e2-0",
+  "networkProfile": {
+    "networkInterfaces": [
+      {
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic",
+        "primary": true,
+        "resourceGroup": "pkb414351e2-coremark0"
+      }
+    ]
+  },
+  "osProfile": {
+    "adminPassword": null,
+    "adminUsername": "perfkit",
+    "allowExtensionOperations": true,
+    "computerName": "pkb-414351e2-0",
+    "customData": null,
+    "linuxConfiguration": {
+      "disablePasswordAuthentication": true,
+      "patchSettings": {
+        "patchMode": "ImageDefault"
+      },
+      "provisionVmAgent": true,
+      "ssh": {
+        "publicKeys": [
+          {
+            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKwczpVQwZZKdhKYq0DoS+g/jqWWwCmBGk5lKRUnrDWZz+MUwWu8+f+iKDOJAANn/Up/9+3GuhP1Q1+gGmbGHNgx6zVU9ZT5zZ8NduxrV8ar5SZYGrZlXzR5iL8Nb9ggM59ctYY0x9bquy5m1vPZ2xbaMTtTDyMH42w7ozhxB0dub/RZfG9kbmIubBJkm/2KvvM5fcPV9oKkPiqBL/vceRnEsxKnSj7ONCuybGe1JROmqrfglXx+ITukLiTiwDqpv/uDaos67V+kicf9ah2V8rmpVxhCf1QmoLcAGP9wTVBM/LWP/Je+DAJF5KZ3LO2V7fneWuZlFJz9raRkpnngKBKISuLgE50K0vUYuITLqlLttFqG4BGcCIUZPjv7KjuJ7W2+YIGC/PqMmc41hJZif4L6xmi3S3XG5RDEJzD/HQ9hNuYygagQqDhJEvyAnkWfNNK4hSC2hYBEj2iuAiQpAZO1Pgoq0s8e03Fw7RmvvwN6miKO4F0HcaIjqp4+pNzn8= mario@mario-MS-7B86\n",
+            "path": "/home/perfkit/.ssh/authorized_keys"
+          }
+        ]
+      }
+    },
+    "requireGuestProvisionSignal": true,
+    "secrets": [],
+    "windowsConfiguration": null
+  },
+  "plan": null,
+  "priority": null,
+  "provisioningState": "Succeeded",
+  "proximityPlacementGroup": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resources": null,
+  "securityProfile": null,
+  "storageProfile": {
+    "dataDisks": [],
+    "imageReference": {
+      "exactVersion": "16.04.202101120",
+      "id": null,
+      "offer": "UbuntuServer",
+      "publisher": "Canonical",
+      "sku": "16.04-LTS",
+      "version": "latest"
+    },
+    "osDisk": {
+      "caching": "ReadWrite",
+      "createOption": "FromImage",
+      "diffDiskSettings": null,
+      "diskSizeGb": 30,
+      "encryptionSettings": null,
+      "image": null,
+      "managedDisk": {
+        "diskEncryptionSet": null,
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/disks/pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "storageAccountType": "Standard_LRS"
+      },
+      "name": "pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580",
+      "osType": "Linux",
+      "vhd": null,
+      "writeAcceleratorEnabled": null
+    }
+  },
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113238z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153238z"
+  },
+  "type": "Microsoft.Compute/virtualMachines",
+  "virtualMachineScaleSet": null,
+  "vmId": "4bb251f1-572e-4208-83f0-c6da77b4de14",
+  "zones": null
+}
+
+STDERR: 
+2021-01-20 12:33:47,907 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az vm show --output json --name pkb-414351e2-0 --resource-group pkb414351e2-coremark0
+2021-01-20 12:33:49,242 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az vm show --output json --name pkb-414351e2-0 --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "additionalCapabilities": null,
+  "availabilitySet": null,
+  "billingProfile": null,
+  "diagnosticsProfile": null,
+  "evictionPolicy": null,
+  "extensionsTimeBudget": null,
+  "hardwareProfile": {
+    "vmSize": "Standard_D2s_v3"
+  },
+  "host": null,
+  "hostGroup": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/virtualMachines/pkb-414351e2-0",
+  "identity": null,
+  "instanceView": null,
+  "licenseType": null,
+  "location": "eastus2",
+  "name": "pkb-414351e2-0",
+  "networkProfile": {
+    "networkInterfaces": [
+      {
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic",
+        "primary": true,
+        "resourceGroup": "pkb414351e2-coremark0"
+      }
+    ]
+  },
+  "osProfile": {
+    "adminPassword": null,
+    "adminUsername": "perfkit",
+    "allowExtensionOperations": true,
+    "computerName": "pkb-414351e2-0",
+    "customData": null,
+    "linuxConfiguration": {
+      "disablePasswordAuthentication": true,
+      "patchSettings": {
+        "patchMode": "ImageDefault"
+      },
+      "provisionVmAgent": true,
+      "ssh": {
+        "publicKeys": [
+          {
+            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKwczpVQwZZKdhKYq0DoS+g/jqWWwCmBGk5lKRUnrDWZz+MUwWu8+f+iKDOJAANn/Up/9+3GuhP1Q1+gGmbGHNgx6zVU9ZT5zZ8NduxrV8ar5SZYGrZlXzR5iL8Nb9ggM59ctYY0x9bquy5m1vPZ2xbaMTtTDyMH42w7ozhxB0dub/RZfG9kbmIubBJkm/2KvvM5fcPV9oKkPiqBL/vceRnEsxKnSj7ONCuybGe1JROmqrfglXx+ITukLiTiwDqpv/uDaos67V+kicf9ah2V8rmpVxhCf1QmoLcAGP9wTVBM/LWP/Je+DAJF5KZ3LO2V7fneWuZlFJz9raRkpnngKBKISuLgE50K0vUYuITLqlLttFqG4BGcCIUZPjv7KjuJ7W2+YIGC/PqMmc41hJZif4L6xmi3S3XG5RDEJzD/HQ9hNuYygagQqDhJEvyAnkWfNNK4hSC2hYBEj2iuAiQpAZO1Pgoq0s8e03Fw7RmvvwN6miKO4F0HcaIjqp4+pNzn8= mario@mario-MS-7B86\n",
+            "path": "/home/perfkit/.ssh/authorized_keys"
+          }
+        ]
+      }
+    },
+    "requireGuestProvisionSignal": true,
+    "secrets": [],
+    "windowsConfiguration": null
+  },
+  "plan": null,
+  "priority": null,
+  "provisioningState": "Succeeded",
+  "proximityPlacementGroup": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resources": null,
+  "securityProfile": null,
+  "storageProfile": {
+    "dataDisks": [],
+    "imageReference": {
+      "exactVersion": "16.04.202101120",
+      "id": null,
+      "offer": "UbuntuServer",
+      "publisher": "Canonical",
+      "sku": "16.04-LTS",
+      "version": "latest"
+    },
+    "osDisk": {
+      "caching": "ReadWrite",
+      "createOption": "FromImage",
+      "diffDiskSettings": null,
+      "diskSizeGb": 30,
+      "encryptionSettings": null,
+      "image": null,
+      "managedDisk": {
+        "diskEncryptionSet": null,
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/disks/pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580",
+        "resourceGroup": "pkb414351e2-coremark0",
+        "storageAccountType": "Standard_LRS"
+      },
+      "name": "pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580",
+      "osType": "Linux",
+      "vhd": null,
+      "writeAcceleratorEnabled": null
+    }
+  },
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113238z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153238z"
+  },
+  "type": "Microsoft.Compute/virtualMachines",
+  "virtualMachineScaleSet": null,
+  "vmId": "4bb251f1-572e-4208-83f0-c6da77b4de14",
+  "zones": null
+}
+
+STDERR: 
+2021-01-20 12:33:49,243 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az disk update --name pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580 --set tags={"timeout_utc": "20210120t153349z", "create_time_utc": "20210120t113349z", "benchmark": "coremark", "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb", "owner": "mario", "benchmark_uid": "coremark0"} --resource-group pkb414351e2-coremark0
+2021-01-20 12:33:54,886 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az disk update --name pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580 --set tags={"timeout_utc": "20210120t153349z", "create_time_utc": "20210120t113349z", "benchmark": "coremark", "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb", "owner": "mario", "benchmark_uid": "coremark0"} --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "creationData": {
+    "createOption": "FromImage",
+    "galleryImageReference": null,
+    "imageReference": {
+      "id": "/Subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/Providers/Microsoft.Compute/Locations/eastus2/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/16.04.202101120",
+      "lun": null
+    },
+    "logicalSectorSize": null,
+    "sourceResourceId": null,
+    "sourceUniqueId": null,
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "diskAccessId": null,
+  "diskIopsReadOnly": null,
+  "diskIopsReadWrite": 500,
+  "diskMBpsReadOnly": null,
+  "diskMBpsReadWrite": 60,
+  "diskSizeBytes": 32213303296,
+  "diskSizeGb": 30,
+  "diskState": "Attached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/disks/pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580",
+  "location": "eastus2",
+  "managedBy": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/virtualMachines/pkb-414351e2-0",
+  "managedByExtended": null,
+  "maxShares": null,
+  "name": "pkb-414351e2-0_OsDisk_1_8fe051b8412a4bc19cdccc8aa0b03580",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "shareInfo": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "tags": {
+    "benchmark": "coremark",
+    "benchmark_uid": "coremark0",
+    "create_time_utc": "20210120t113349z",
+    "owner": "mario",
+    "perfkit_uuid": "414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb",
+    "timeout_utc": "20210120t153349z"
+  },
+  "tier": null,
+  "timeCreated": "2021-01-20T11:32:47.416058+00:00",
+  "type": "Microsoft.Compute/disks",
+  "uniqueId": "8fe051b8-412a-4bc1-9cdc-cc8aa0b03580",
+  "zones": null
+}
+
+STDERR: 
+2021-01-20 12:33:54,886 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network nic show --output json --name pkb-414351e2-0-nic --resource-group pkb414351e2-coremark0
+2021-01-20 12:33:55,832 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network nic show --output json --name pkb-414351e2-0-nic --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "dnsSettings": {
+    "appliedDnsServers": [],
+    "dnsServers": [],
+    "internalDnsNameLabel": null,
+    "internalDomainNameSuffix": "p5n3z3g1zamuvn2ibj42yt4f3c.cx.internal.cloudapp.net",
+    "internalFqdn": null
+  },
+  "dscpConfiguration": null,
+  "enableAcceleratedNetworking": false,
+  "enableIpForwarding": false,
+  "etag": "W/\"e29576db-3678-48b7-8821-d08326503752\"",
+  "extendedLocation": null,
+  "hostedWorkloads": [],
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic",
+  "ipConfigurations": [
+    {
+      "applicationGatewayBackendAddressPools": null,
+      "applicationSecurityGroups": null,
+      "etag": "W/\"e29576db-3678-48b7-8821-d08326503752\"",
+      "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic/ipConfigurations/ipconfig1",
+      "loadBalancerBackendAddressPools": null,
+      "loadBalancerInboundNatRules": null,
+      "name": "ipconfig1",
+      "primary": true,
+      "privateIpAddress": "10.0.0.4",
+      "privateIpAddressVersion": "IPv4",
+      "privateIpAllocationMethod": "Dynamic",
+      "privateLinkConnectionProperties": null,
+      "provisioningState": "Succeeded",
+      "publicIpAddress": {
+        "ddosSettings": null,
+        "dnsSettings": null,
+        "etag": null,
+        "extendedLocation": null,
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/publicIPAddresses/pkb-414351e2-0-public-ip",
+        "idleTimeoutInMinutes": null,
+        "ipAddress": null,
+        "ipConfiguration": null,
+        "ipTags": null,
+        "location": null,
+        "name": null,
+        "provisioningState": null,
+        "publicIpAddressVersion": null,
+        "publicIpAllocationMethod": null,
+        "publicIpPrefix": null,
+        "resourceGroup": "pkb414351e2-coremark0",
+        "resourceGuid": null,
+        "sku": null,
+        "tags": null,
+        "type": null,
+        "zones": null
+      },
+      "resourceGroup": "pkb414351e2-coremark0",
+      "subnet": {
+        "addressPrefix": null,
+        "addressPrefixes": null,
+        "delegations": null,
+        "etag": null,
+        "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/virtualNetworks/pkb414351e2-coremark0-eastus2-vnet/subnets/pkb414351e2-coremark0-eastus2-vnet-subnet",
+        "ipAllocations": null,
+        "ipConfigurationProfiles": null,
+        "ipConfigurations": null,
+        "name": null,
+        "natGateway": null,
+        "networkSecurityGroup": null,
+        "privateEndpointNetworkPolicies": null,
+        "privateEndpoints": null,
+        "privateLinkServiceNetworkPolicies": null,
+        "provisioningState": null,
+        "purpose": null,
+        "resourceGroup": "pkb414351e2-coremark0",
+        "resourceNavigationLinks": null,
+        "routeTable": null,
+        "serviceAssociationLinks": null,
+        "serviceEndpointPolicies": null,
+        "serviceEndpoints": null
+      },
+      "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+      "virtualNetworkTaps": null
+    }
+  ],
+  "location": "eastus2",
+  "macAddress": "00-0D-3A-04-D0-74",
+  "name": "pkb-414351e2-0-nic",
+  "networkSecurityGroup": null,
+  "primary": true,
+  "privateEndpoint": null,
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceGuid": "7a58c9f4-3743-4c94-8f0d-f666dfd45207",
+  "tags": null,
+  "tapConfigurations": [],
+  "type": "Microsoft.Network/networkInterfaces",
+  "virtualMachine": {
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Compute/virtualMachines/pkb-414351e2-0",
+    "resourceGroup": "pkb414351e2-coremark0"
+  }
+}
+
+STDERR: 
+2021-01-20 12:33:55,833 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network public-ip show --output json --name pkb-414351e2-0-public-ip --resource-group pkb414351e2-coremark0
+2021-01-20 12:33:56,787 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network public-ip show --output json --name pkb-414351e2-0-public-ip --resource-group pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: {
+  "ddosSettings": null,
+  "dnsSettings": null,
+  "etag": "W/\"83341714-d2a0-4b41-b932-18934eb010d3\"",
+  "extendedLocation": null,
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/publicIPAddresses/pkb-414351e2-0-public-ip",
+  "idleTimeoutInMinutes": 4,
+  "ipAddress": "40.70.60.143",
+  "ipConfiguration": {
+    "etag": null,
+    "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkInterfaces/pkb-414351e2-0-nic/ipConfigurations/ipconfig1",
+    "name": null,
+    "privateIpAddress": null,
+    "privateIpAllocationMethod": null,
+    "provisioningState": null,
+    "publicIpAddress": null,
+    "resourceGroup": "pkb414351e2-coremark0",
+    "subnet": null
+  },
+  "ipTags": [],
+  "location": "eastus2",
+  "name": "pkb-414351e2-0-public-ip",
+  "provisioningState": "Succeeded",
+  "publicIpAddressVersion": "IPv4",
+  "publicIpAllocationMethod": "Dynamic",
+  "publicIpPrefix": null,
+  "resourceGroup": "pkb414351e2-coremark0",
+  "resourceGuid": "af62f98f-8bea-421d-8101-a5df668a7afc",
+  "sku": {
+    "name": "Basic",
+    "tier": "Regional"
+  },
+  "tags": null,
+  "type": "Microsoft.Network/publicIPAddresses",
+  "zones": null
+}
+
+STDERR: 
+2021-01-20 12:33:56,788 414351e2 Thread-15 coremark(1/1) benchmark_spec.py:806 INFO     VM: 40.70.60.143
+2021-01-20 12:33:56,788 414351e2 Thread-15 coremark(1/1) benchmark_spec.py:807 INFO     Waiting for boot completion.
+2021-01-20 12:33:56,788 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: az network nsg rule create --name allow-22-22-0.0.0.0_0 --destination-port-range 22-22 --access Allow --priority 100 --source-address-prefixes 0.0.0.0/0 --resource-group pkb414351e2-coremark0 --nsg pkb414351e2-coremark0-eastus2-vnet-subnet-nsg
+2021-01-20 12:34:08,872 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {az network nsg rule create --name allow-22-22-0.0.0.0_0 --destination-port-range 22-22 --access Allow --priority 100 --source-address-prefixes 0.0.0.0/0 --resource-group pkb414351e2-coremark0 --nsg pkb414351e2-coremark0-eastus2-vnet-subnet-nsg}
+ReturnCode:0
+STDOUT: {
+  "access": "Allow",
+  "description": null,
+  "destinationAddressPrefix": "*",
+  "destinationAddressPrefixes": [],
+  "destinationApplicationSecurityGroups": null,
+  "destinationPortRange": "22-22",
+  "destinationPortRanges": [],
+  "direction": "Inbound",
+  "etag": "W/\"017660e1-820f-4566-9356-057a6b9d5080\"",
+  "id": "/subscriptions/68e858de-2a77-4af2-a3ad-db7d702f0ff2/resourceGroups/pkb414351e2-coremark0/providers/Microsoft.Network/networkSecurityGroups/pkb414351e2-coremark0-eastus2-vnet-subnet-nsg/securityRules/allow-22-22-0.0.0.0_0",
+  "name": "allow-22-22-0.0.0.0_0",
+  "priority": 100,
+  "protocol": "*",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "pkb414351e2-coremark0",
+  "sourceAddressPrefix": "0.0.0.0/0",
+  "sourceAddressPrefixes": [],
+  "sourceApplicationSecurityGroups": null,
+  "sourcePortRange": "*",
+  "sourcePortRanges": [],
+  "type": "Microsoft.Network/networkSecurityGroups/securityRules"
+}
+
+STDERR: 
+2021-01-20 12:34:08,873 414351e2 Thread-15 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m hostname
+2021-01-20 12:34:10,395 414351e2 Thread-15 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m hostname}
+ReturnCode:0
+STDOUT: pkb-414351e2-0
+
+STDERR: Warning: Permanently added '40.70.60.143' (ECDSA) to the list of known hosts.
+
+2021-01-20 12:34:10,421 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m mkdir -p /tmp/pkb
+2021-01-20 12:34:10,624 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m mkdir -p /tmp/pkb}
+ReturnCode:0
+STDOUT: 
+STDERR: 
+2021-01-20 12:34:10,624 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo mkdir -p /opt/pkb; sudo chmod a+rwxt /opt/pkb
+2021-01-20 12:34:10,969 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo mkdir -p /opt/pkb; sudo chmod a+rwxt /opt/pkb}
+ReturnCode:0
+STDOUT: 
+STDERR: 
+2021-01-20 12:34:10,969 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo apt-get update
+2021-01-20 12:34:26,142 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo apt-get update}
+ReturnCode:0
+STDOUT: Hit:1 http://azure.archive.ubuntu.com/ubuntu xenial InRelease
+Get:2 http://azure.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu xenial/universe Translation-en [4,354 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [1,528 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [361 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [144 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu xenial/multiverse Translation-en [106 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [784 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1,931 kB]
+Get:13 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [223 kB]
+Get:14 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [7,864 B]
+Get:15 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [2,672 B]
+Get:16 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [463 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1,211 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [353 kB]
+Get:19 http://azure.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [22.8 kB]
+Get:20 http://azure.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,460 B]
+Get:21 http://azure.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [9,812 B]
+Get:22 http://azure.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,456 B]
+Get:23 http://azure.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [11.3 kB]
+Get:24 http://azure.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4,476 B]
+Fetched 19.4 MB in 4s (4,016 kB/s)
+Reading package lists...
+
+STDERR: 
+2021-01-20 12:34:26,142 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install python python2.7
+2021-01-20 12:34:26,684 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install python python2.7}
+ReturnCode:0
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+python is already the newest version (2.7.12-1~16.04).
+python2.7 is already the newest version (2.7.12-1ubuntu0~16.04.13).
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+
+STDERR: 
+2021-01-20 12:34:26,685 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m python --version
+2021-01-20 12:34:26,963 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m python --version}
+ReturnCode:0
+STDOUT: 
+STDERR: Python 2.7.12
+
+2021-01-20 12:34:26,963 414351e2 Thread-28 coremark(1/1) python.py:71 INFO     Default version of python: 2.7.12
+2021-01-20 12:34:26,964 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /proc/sys/net/ipv4/tcp_congestion_control
+2021-01-20 12:34:27,170 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /proc/sys/net/ipv4/tcp_congestion_control}
+ReturnCode:0
+STDOUT: cubic
+
+STDERR: 
+2021-01-20 12:34:27,170 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m lscpu
+2021-01-20 12:34:27,382 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m lscpu}
+ReturnCode:0
+STDOUT: Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per core:    2
+Core(s) per socket:    1
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz
+Stepping:              4
+CPU MHz:               2095.077
+BogoMIPS:              4190.15
+Virtualization:        VT-x
+Hypervisor vendor:     Microsoft
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              36608K
+NUMA node0 CPU(s):     0,1
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti tpr_shadow vnmi ept vpid fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt avx512cd avx512bw avx512vl xsaveopt xsavec xsaves md_clear
+
+STDERR: 
+2021-01-20 12:34:27,383 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install lsb-release
+2021-01-20 12:34:27,954 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install lsb-release}
+ReturnCode:0
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+lsb-release is already the newest version (9.20160110ubuntu0.2).
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+
+STDERR: 
+2021-01-20 12:34:27,955 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m lsb_release -d
+2021-01-20 12:34:28,199 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m lsb_release -d}
+ReturnCode:0
+STDOUT: Description:	Ubuntu 16.04.7 LTS
+
+STDERR: 
+2021-01-20 12:34:28,199 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m uname -r
+2021-01-20 12:34:28,398 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m uname -r}
+ReturnCode:0
+STDOUT: 4.15.0-1103-azure
+
+STDERR: 
+2021-01-20 12:34:28,399 414351e2 Thread-28 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo fdisk -l
+2021-01-20 12:34:28,834 414351e2 Thread-28 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo fdisk -l}
+ReturnCode:0
+STDOUT: Disk /dev/sda: 30 GiB, 32213303296 bytes, 62916608 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: 294C5EA4-B0D1-4918-B999-11D4B7155114
+
+Device      Start      End  Sectors  Size Type
+/dev/sda1  227328 62916574 62689247 29.9G Linux filesystem
+/dev/sda14   2048    10239     8192    4M BIOS boot
+/dev/sda15  10240   227327   217088  106M EFI System
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/sdb: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0x4bb251f1
+
+Device     Boot Start      End  Sectors Size Id Type
+/dev/sdb1        2048 33552383 33550336  16G  7 HPFS/NTFS/exFAT
+
+
+
+STDERR: 
+2021-01-20 12:34:28,870 414351e2 MainThread coremark(1/1) vm_util.py:599 INFO     ssh to VMs in this benchmark by name with:
+  ssh -F /tmp/perfkitbenchmarker/runs/414351e2/ssh_config <vm_name>
+  ssh -F /tmp/perfkitbenchmarker/runs/414351e2/ssh_config vm<index>
+  ssh -F /tmp/perfkitbenchmarker/runs/414351e2/ssh_config <group_name>-<index>
+2021-01-20 12:34:28,871 414351e2 MainThread coremark(1/1) pkb.py:715 INFO     Preparing benchmark coremark
+2021-01-20 12:34:28,873 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install build-essential git libtool autoconf automake
+2021-01-20 12:35:38,680 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install build-essential git libtool autoconf automake}
+ReturnCode:0
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (1:2.7.4-0ubuntu1.9).
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  autotools-dev cpp cpp-5 dpkg-dev fakeroot g++ g++-5 gcc gcc-5
+  libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+  libasan2 libatomic1 libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libdpkg-perl
+  libfakeroot libfile-fcntllock-perl libgcc-5-dev libgomp1 libisl15 libitm1
+  liblsan0 libltdl-dev libltdl7 libmpc3 libmpx0 libquadmath0 libstdc++-5-dev
+  libtsan0 libubsan0 linux-libc-dev m4 make manpages-dev
+Suggested packages:
+  autoconf-archive gnu-standards autoconf-doc gettext cpp-doc gcc-5-locales
+  debian-keyring g++-multilib g++-5-multilib gcc-5-doc libstdc++6-5-dbg
+  gcc-multilib flex bison gdb gcc-doc gcc-5-multilib libgcc1-dbg libgomp1-dbg
+  libitm1-dbg libatomic1-dbg libasan2-dbg liblsan0-dbg libtsan0-dbg
+  libubsan0-dbg libcilkrts5-dbg libmpx0-dbg libquadmath0-dbg glibc-doc
+  libtool-doc libstdc++-5-doc gfortran | fortran95-compiler gcj-jdk make-doc
+The following NEW packages will be installed:
+  autoconf automake autotools-dev build-essential cpp cpp-5 dpkg-dev fakeroot
+  g++ g++-5 gcc gcc-5 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libasan2 libatomic1 libc-dev-bin libc6-dev libcc1-0
+  libcilkrts5 libdpkg-perl libfakeroot libfile-fcntllock-perl libgcc-5-dev
+  libgomp1 libisl15 libitm1 liblsan0 libltdl-dev libltdl7 libmpc3 libmpx0
+  libquadmath0 libstdc++-5-dev libtool libtsan0 libubsan0 linux-libc-dev m4
+  make manpages-dev
+0 upgraded, 42 newly installed, 0 to remove and 5 not upgraded.
+Need to get 37.7 MB of archives.
+After this operation, 136 MB of additional disk space will be used.
+Get:1 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libmpc3 amd64 1.0.3-1 [39.7 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 m4 amd64 1.4.17-5 [195 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 autoconf all 2.69-9 [321 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 autotools-dev all 20150820.1 [39.8 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 automake all 1:1.15-4ubuntu1 [510 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libc-dev-bin amd64 2.23-0ubuntu11.2 [68.8 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-libc-dev amd64 4.4.0-200.232 [834 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libc6-dev amd64 2.23-0ubuntu11.2 [2,083 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libisl15 amd64 0.16.1-1 [524 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 cpp-5 amd64 5.4.0-6ubuntu1~16.04.12 [7,783 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 cpp amd64 4:5.3.1-1ubuntu1 [27.7 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcc1-0 amd64 5.4.0-6ubuntu1~16.04.12 [38.8 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgomp1 amd64 5.4.0-6ubuntu1~16.04.12 [55.2 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libitm1 amd64 5.4.0-6ubuntu1~16.04.12 [27.4 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libatomic1 amd64 5.4.0-6ubuntu1~16.04.12 [8,892 B]
+Get:16 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasan2 amd64 5.4.0-6ubuntu1~16.04.12 [265 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 liblsan0 amd64 5.4.0-6ubuntu1~16.04.12 [105 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtsan0 amd64 5.4.0-6ubuntu1~16.04.12 [244 kB]
+Get:19 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libubsan0 amd64 5.4.0-6ubuntu1~16.04.12 [95.3 kB]
+Get:20 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcilkrts5 amd64 5.4.0-6ubuntu1~16.04.12 [40.0 kB]
+Get:21 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmpx0 amd64 5.4.0-6ubuntu1~16.04.12 [9,762 B]
+Get:22 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libquadmath0 amd64 5.4.0-6ubuntu1~16.04.12 [131 kB]
+Get:23 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgcc-5-dev amd64 5.4.0-6ubuntu1~16.04.12 [2,239 kB]
+Get:24 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gcc-5 amd64 5.4.0-6ubuntu1~16.04.12 [8,612 kB]
+Get:25 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 gcc amd64 4:5.3.1-1ubuntu1 [5,244 B]
+Get:26 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++-5-dev amd64 5.4.0-6ubuntu1~16.04.12 [1,428 kB]
+Get:27 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 g++-5 amd64 5.4.0-6ubuntu1~16.04.12 [8,430 kB]
+Get:28 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 g++ amd64 4:5.3.1-1ubuntu1 [1,504 B]
+Get:29 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 make amd64 4.1-6 [151 kB]
+Get:30 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdpkg-perl all 1.18.4ubuntu1.6 [195 kB]
+Get:31 http://azure.archive.ubuntu.com/ubuntu xenial-updates/main amd64 dpkg-dev all 1.18.4ubuntu1.6 [584 kB]
+Get:32 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 build-essential amd64 12.1ubuntu2 [4,758 B]
+Get:33 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libfakeroot amd64 1.20.2-1ubuntu1 [25.5 kB]
+Get:34 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 fakeroot amd64 1.20.2-1ubuntu1 [61.8 kB]
+Get:35 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-perl all 1.19.03-1 [47.6 kB]
+Get:36 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-xs-perl amd64 0.04-4build1 [11.0 kB]
+Get:37 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+Get:38 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libfile-fcntllock-perl amd64 0.22-3 [32.0 kB]
+Get:39 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libltdl7 amd64 2.4.6-0.1 [38.3 kB]
+Get:40 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libltdl-dev amd64 2.4.6-0.1 [162 kB]
+Get:41 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 libtool all 2.4.6-0.1 [193 kB]
+Get:42 http://azure.archive.ubuntu.com/ubuntu xenial/main amd64 manpages-dev all 4.04-2 [2,048 kB]
+Fetched 37.7 MB in 0s (50.2 MB/s)
+Selecting previously unselected package libmpc3:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 54051 files and directories currently installed.)
+Preparing to unpack .../libmpc3_1.0.3-1_amd64.deb ...
+Unpacking libmpc3:amd64 (1.0.3-1) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../archives/m4_1.4.17-5_amd64.deb ...
+Unpacking m4 (1.4.17-5) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../autoconf_2.69-9_all.deb ...
+Unpacking autoconf (2.69-9) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../autotools-dev_20150820.1_all.deb ...
+Unpacking autotools-dev (20150820.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../automake_1%3a1.15-4ubuntu1_all.deb ...
+Unpacking automake (1:1.15-4ubuntu1) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../libc-dev-bin_2.23-0ubuntu11.2_amd64.deb ...
+Unpacking libc-dev-bin (2.23-0ubuntu11.2) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../linux-libc-dev_4.4.0-200.232_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.4.0-200.232) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../libc6-dev_2.23-0ubuntu11.2_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.23-0ubuntu11.2) ...
+Selecting previously unselected package libisl15:amd64.
+Preparing to unpack .../libisl15_0.16.1-1_amd64.deb ...
+Unpacking libisl15:amd64 (0.16.1-1) ...
+Selecting previously unselected package cpp-5.
+Preparing to unpack .../cpp-5_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking cpp-5 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../cpp_4%3a5.3.1-1ubuntu1_amd64.deb ...
+Unpacking cpp (4:5.3.1-1ubuntu1) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../libcc1-0_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../libgomp1_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libgomp1:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../libitm1_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libitm1:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../libatomic1_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libatomic1:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libasan2:amd64.
+Preparing to unpack .../libasan2_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libasan2:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../liblsan0_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking liblsan0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../libtsan0_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libtsan0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libubsan0:amd64.
+Preparing to unpack .../libubsan0_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libubsan0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libcilkrts5:amd64.
+Preparing to unpack .../libcilkrts5_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libmpx0:amd64.
+Preparing to unpack .../libmpx0_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libmpx0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../libquadmath0_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package libgcc-5-dev:amd64.
+Preparing to unpack .../libgcc-5-dev_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package gcc-5.
+Preparing to unpack .../gcc-5_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking gcc-5 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../gcc_4%3a5.3.1-1ubuntu1_amd64.deb ...
+Unpacking gcc (4:5.3.1-1ubuntu1) ...
+Selecting previously unselected package libstdc++-5-dev:amd64.
+Preparing to unpack .../libstdc++-5-dev_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package g++-5.
+Preparing to unpack .../g++-5_5.4.0-6ubuntu1~16.04.12_amd64.deb ...
+Unpacking g++-5 (5.4.0-6ubuntu1~16.04.12) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a5.3.1-1ubuntu1_amd64.deb ...
+Unpacking g++ (4:5.3.1-1ubuntu1) ...
+Selecting previously unselected package make.
+Preparing to unpack .../archives/make_4.1-6_amd64.deb ...
+Unpacking make (4.1-6) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../libdpkg-perl_1.18.4ubuntu1.6_all.deb ...
+Unpacking libdpkg-perl (1.18.4ubuntu1.6) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../dpkg-dev_1.18.4ubuntu1.6_all.deb ...
+Unpacking dpkg-dev (1.18.4ubuntu1.6) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_12.1ubuntu2_amd64.deb ...
+Unpacking build-essential (12.1ubuntu2) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../libfakeroot_1.20.2-1ubuntu1_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.20.2-1ubuntu1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../fakeroot_1.20.2-1ubuntu1_amd64.deb ...
+Unpacking fakeroot (1.20.2-1ubuntu1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../libalgorithm-diff-perl_1.19.03-1_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.03-1) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-4build1_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-4build1) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../libalgorithm-merge-perl_0.08-3_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-3) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../libfile-fcntllock-perl_0.22-3_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.22-3) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../libltdl7_2.4.6-0.1_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-0.1) ...
+Selecting previously unselected package libltdl-dev:amd64.
+Preparing to unpack .../libltdl-dev_2.4.6-0.1_amd64.deb ...
+Unpacking libltdl-dev:amd64 (2.4.6-0.1) ...
+Selecting previously unselected package libtool.
+Preparing to unpack .../libtool_2.4.6-0.1_all.deb ...
+Unpacking libtool (2.4.6-0.1) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../manpages-dev_4.04-2_all.deb ...
+Unpacking manpages-dev (4.04-2) ...
+Processing triggers for install-info (6.1.0.dfsg.1-5) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11.2) ...
+Setting up libmpc3:amd64 (1.0.3-1) ...
+Setting up m4 (1.4.17-5) ...
+Setting up autoconf (2.69-9) ...
+Setting up autotools-dev (20150820.1) ...
+Setting up automake (1:1.15-4ubuntu1) ...
+update-alternatives: using /usr/bin/automake-1.15 to provide /usr/bin/automake (automake) in auto mode
+Setting up libc-dev-bin (2.23-0ubuntu11.2) ...
+Setting up linux-libc-dev:amd64 (4.4.0-200.232) ...
+Setting up libc6-dev:amd64 (2.23-0ubuntu11.2) ...
+Setting up libisl15:amd64 (0.16.1-1) ...
+Setting up cpp-5 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up cpp (4:5.3.1-1ubuntu1) ...
+Setting up libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libgomp1:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libitm1:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libatomic1:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libasan2:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up liblsan0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libtsan0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libubsan0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libmpx0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up gcc-5 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up gcc (4:5.3.1-1ubuntu1) ...
+Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up g++-5 (5.4.0-6ubuntu1~16.04.12) ...
+Setting up g++ (4:5.3.1-1ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up make (4.1-6) ...
+Setting up libdpkg-perl (1.18.4ubuntu1.6) ...
+Setting up dpkg-dev (1.18.4ubuntu1.6) ...
+Setting up build-essential (12.1ubuntu2) ...
+Setting up libfakeroot:amd64 (1.20.2-1ubuntu1) ...
+Setting up fakeroot (1.20.2-1ubuntu1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up libalgorithm-diff-perl (1.19.03-1) ...
+Setting up libalgorithm-diff-xs-perl (0.04-4build1) ...
+Setting up libalgorithm-merge-perl (0.08-3) ...
+Setting up libfile-fcntllock-perl (0.22-3) ...
+Setting up libltdl7:amd64 (2.4.6-0.1) ...
+Setting up libltdl-dev:amd64 (2.4.6-0.1) ...
+Setting up libtool (2.4.6-0.1) ...
+Setting up manpages-dev (4.04-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu11.2) ...
+
+STDERR: Extracting templates from packages: 71%Extracting templates from packages: 100%
+
+2021-01-20 12:35:38,681 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install wget
+2021-01-20 12:35:39,234 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo DEBIAN_FRONTEND='noninteractive' /usr/bin/apt-get -y install wget}
+ReturnCode:0
+STDOUT: Reading package lists...
+Building dependency tree...
+Reading state information...
+wget is already the newest version (1.17.1-1ubuntu1.5).
+The following package was automatically installed and is no longer required:
+  grub-pc-bin
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+
+STDERR: 
+2021-01-20 12:35:39,234 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m wget https://github.com/eembc/coremark/archive/v1.01.tar.gz -P /opt/pkb
+2021-01-20 12:35:39,599 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m wget https://github.com/eembc/coremark/archive/v1.01.tar.gz -P /opt/pkb}
+ReturnCode:0
+STDOUT: 
+STDERR: --2021-01-20 11:35:39--  https://github.com/eembc/coremark/archive/v1.01.tar.gz
+Resolving github.com (github.com)... 140.82.114.4
+Connecting to github.com (github.com)|140.82.114.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/eembc/coremark/tar.gz/v1.01 [following]
+--2021-01-20 11:35:39--  https://codeload.github.com/eembc/coremark/tar.gz/v1.01
+Resolving codeload.github.com (codeload.github.com)... 140.82.112.10
+Connecting to codeload.github.com (codeload.github.com)|140.82.112.10|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 401208 (392K) [application/x-gzip]
+Saving to: /opt/pkb/v1.01.tar.gz
+
+     0K .......... .......... .......... .......... .......... 12% 4.69M 0s
+    50K .......... .......... .......... .......... .......... 25% 8.64M 0s
+   100K .......... .......... .......... .......... .......... 38% 67.9M 0s
+   150K .......... .......... .......... .......... .......... 51% 10.4M 0s
+   200K .......... .......... .......... .......... .......... 63% 62.4M 0s
+   250K .......... .......... .......... .......... .......... 76% 69.8M 0s
+   300K .......... .......... .......... .......... .......... 89% 11.3M 0s
+   350K .......... .......... .......... .......... .         100% 71.7M=0.03s
+
+2021-01-20 11:35:39 (13.7 MB/s) - /opt/pkb/v1.01.tar.gz saved [401208/401208]
+
+
+2021-01-20 12:35:39,600 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cd /opt/pkb && tar xvfz v1.01.tar.gz
+2021-01-20 12:35:39,907 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cd /opt/pkb && tar xvfz v1.01.tar.gz}
+ReturnCode:0
+STDOUT: coremark-1.01/
+coremark-1.01/LICENSE.md
+coremark-1.01/Makefile
+coremark-1.01/README.md
+coremark-1.01/barebones/
+coremark-1.01/barebones/core_portme.c
+coremark-1.01/barebones/core_portme.h
+coremark-1.01/barebones/core_portme.mak
+coremark-1.01/barebones/cvt.c
+coremark-1.01/barebones/ee_printf.c
+coremark-1.01/core_list_join.c
+coremark-1.01/core_main.c
+coremark-1.01/core_matrix.c
+coremark-1.01/core_state.c
+coremark-1.01/core_util.c
+coremark-1.01/coremark.h
+coremark-1.01/cygwin/
+coremark-1.01/cygwin/core_portme.c
+coremark-1.01/cygwin/core_portme.h
+coremark-1.01/cygwin/core_portme.mak
+coremark-1.01/docs/
+coremark-1.01/docs/READM.md
+coremark-1.01/docs/balance_O0_joined.png
+coremark-1.01/docs/coremark_profile_o0_joined.png
+coremark-1.01/docs/html/
+coremark-1.01/docs/html/files/
+coremark-1.01/docs/html/files/PIC32/
+coremark-1.01/docs/html/files/PIC32/core_portme-mak.html
+coremark-1.01/docs/html/files/core_list_join-c.html
+coremark-1.01/docs/html/files/core_main-c.html
+coremark-1.01/docs/html/files/core_matrix-c.html
+coremark-1.01/docs/html/files/core_state-c.html
+coremark-1.01/docs/html/files/core_util-c.html
+coremark-1.01/docs/html/files/coremark-h.html
+coremark-1.01/docs/html/files/docs/
+coremark-1.01/docs/html/files/docs/core_state.png
+coremark-1.01/docs/html/files/linux/
+coremark-1.01/docs/html/files/linux/core_portme-c.html
+coremark-1.01/docs/html/files/linux/core_portme-h.html
+coremark-1.01/docs/html/files/linux/core_portme-mak.html
+coremark-1.01/docs/html/files/readme-txt.html
+coremark-1.01/docs/html/files/release_notes-txt.html
+coremark-1.01/docs/html/index.html
+coremark-1.01/docs/html/index/
+coremark-1.01/docs/html/index/BuildTargets.html
+coremark-1.01/docs/html/index/Configuration.html
+coremark-1.01/docs/html/index/Configurations.html
+coremark-1.01/docs/html/index/Files.html
+coremark-1.01/docs/html/index/Functions.html
+coremark-1.01/docs/html/index/General.html
+coremark-1.01/docs/html/index/General2.html
+coremark-1.01/docs/html/index/Types.html
+coremark-1.01/docs/html/index/Variables.html
+coremark-1.01/docs/html/javascript/
+coremark-1.01/docs/html/javascript/main.js
+coremark-1.01/docs/html/javascript/searchdata.js
+coremark-1.01/docs/html/search/
+coremark-1.01/docs/html/search/BuildTargetsP.html
+coremark-1.01/docs/html/search/ConfigurationC.html
+coremark-1.01/docs/html/search/ConfigurationH.html
+coremark-1.01/docs/html/search/ConfigurationM.html
+coremark-1.01/docs/html/search/ConfigurationS.html
+coremark-1.01/docs/html/search/ConfigurationT.html
+coremark-1.01/docs/html/search/ConfigurationU.html
+coremark-1.01/docs/html/search/ConfigurationsH.html
+coremark-1.01/docs/html/search/ConfigurationsM.html
+coremark-1.01/docs/html/search/ConfigurationsS.html
+coremark-1.01/docs/html/search/ConfigurationsT.html
+coremark-1.01/docs/html/search/FilesC.html
+coremark-1.01/docs/html/search/FilesR.html
+coremark-1.01/docs/html/search/FunctionsC.html
+coremark-1.01/docs/html/search/FunctionsG.html
+coremark-1.01/docs/html/search/FunctionsI.html
+coremark-1.01/docs/html/search/FunctionsM.html
+coremark-1.01/docs/html/search/FunctionsP.html
+coremark-1.01/docs/html/search/FunctionsS.html
+coremark-1.01/docs/html/search/FunctionsT.html
+coremark-1.01/docs/html/search/GeneralB.html
+coremark-1.01/docs/html/search/GeneralC.html
+coremark-1.01/docs/html/search/GeneralD.html
+coremark-1.01/docs/html/search/GeneralF.html
+coremark-1.01/docs/html/search/GeneralG.html
+coremark-1.01/docs/html/search/GeneralH.html
+coremark-1.01/docs/html/search/GeneralI.html
+coremark-1.01/docs/html/search/GeneralL.html
+coremark-1.01/docs/html/search/GeneralM.html
+coremark-1.01/docs/html/search/GeneralO.html
+coremark-1.01/docs/html/search/GeneralP.html
+coremark-1.01/docs/html/search/GeneralR.html
+coremark-1.01/docs/html/search/GeneralS.html
+coremark-1.01/docs/html/search/GeneralT.html
+coremark-1.01/docs/html/search/GeneralU.html
+coremark-1.01/docs/html/search/GeneralV.html
+coremark-1.01/docs/html/search/GeneralW.html
+coremark-1.01/docs/html/search/NoResults.html
+coremark-1.01/docs/html/search/TypesS.html
+coremark-1.01/docs/html/search/VariablesC.html
+coremark-1.01/docs/html/search/VariablesD.html
+coremark-1.01/docs/html/search/VariablesL.html
+coremark-1.01/docs/html/search/VariablesO.html
+coremark-1.01/docs/html/search/VariablesP.html
+coremark-1.01/docs/html/search/VariablesR.html
+coremark-1.01/docs/html/search/VariablesS.html
+coremark-1.01/docs/html/styles/
+coremark-1.01/docs/html/styles/1.css
+coremark-1.01/docs/html/styles/2.css
+coremark-1.01/docs/html/styles/main.css
+coremark-1.01/linux/
+coremark-1.01/linux/core_portme.c
+coremark-1.01/linux/core_portme.h
+coremark-1.01/linux/core_portme.mak
+coremark-1.01/linux64/
+coremark-1.01/linux64/core_portme.c
+coremark-1.01/linux64/core_portme.h
+coremark-1.01/linux64/core_portme.mak
+coremark-1.01/simple/
+coremark-1.01/simple/core_portme.c
+coremark-1.01/simple/core_portme.h
+coremark-1.01/simple/core_portme.mak
+
+STDERR: 
+2021-01-20 12:35:39,907 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sed -i -e "s/LFLAGS_END += -lrt/LFLAGS_END += -lrt -lpthread/g" /opt/pkb/coremark-1.01/linux64/core_portme.mak
+2021-01-20 12:35:40,114 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sed -i -e "s/LFLAGS_END += -lrt/LFLAGS_END += -lrt -lpthread/g" /opt/pkb/coremark-1.01/linux64/core_portme.mak}
+ReturnCode:0
+STDOUT: 
+STDERR: 
+2021-01-20 12:35:40,117 414351e2 MainThread coremark(1/1) pkb.py:751 INFO     Running benchmark coremark
+2021-01-20 12:35:40,117 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /proc/cpuinfo | grep processor | wc -l
+2021-01-20 12:35:40,318 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /proc/cpuinfo | grep processor | wc -l}
+ReturnCode:0
+STDOUT: 2
+
+STDERR: 
+2021-01-20 12:35:40,318 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cd /opt/pkb/coremark-1.01;make PORT_DIR=linux64 ITERATIONS=1000000 XCFLAGS="-g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1"
+2021-01-20 12:39:50,740 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cd /opt/pkb/coremark-1.01;make PORT_DIR=linux64 ITERATIONS=1000000 XCFLAGS="-g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1"}
+ReturnCode:0
+STDOUT: make XCFLAGS="-g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1" load run1.log
+make[1]: Entering directory '/opt/pkb/coremark-1.01'
+make port_prebuild
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_prebuild'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make link
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+gcc -O2 -Ilinux64 -I. -DFLAGS_STR=\""-O2 -g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1  -lrt -lpthread"\" -DITERATIONS=1000000 -g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1 core_list_join.c core_main.c core_matrix.c core_state.c core_util.c linux64/core_portme.c -o ./coremark.exe -lrt -lpthread
+Link performed along with compile
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make port_postbuild
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_postbuild'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make port_preload
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_preload'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+echo Loading done ./coremark.exe
+Loading done ./coremark.exe
+make port_postload
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_postload'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make port_prerun
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_prerun'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+./coremark.exe  0x0 0x0 0x66 1000000 7 1 2000 > ./run1.log
+make port_postrun
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_postrun'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make[1]: Leaving directory '/opt/pkb/coremark-1.01'
+make XCFLAGS="-g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DVALIDATION_RUN=1" load run2.log
+make[1]: Entering directory '/opt/pkb/coremark-1.01'
+make port_preload
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_preload'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+echo Loading done ./coremark.exe
+Loading done ./coremark.exe
+make port_postload
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_postload'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make port_prerun
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_prerun'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+./coremark.exe  0x3415 0x3415 0x66 1000000 7 1 2000  > ./run2.log
+make port_postrun
+make[2]: Entering directory '/opt/pkb/coremark-1.01'
+make[2]: Nothing to be done for 'port_postrun'.
+make[2]: Leaving directory '/opt/pkb/coremark-1.01'
+make[1]: Leaving directory '/opt/pkb/coremark-1.01'
+Check run1.log and run2.log for results.
+See readme.txt for run and reporting rules.
+
+STDERR: core_main.c: In function main:
+core_main.c:287:12: warning: format %lu expects argument of type long unsigned int, but argument 2 has type unsigned int [-Wformat=]
+  ee_printf("CoreMark Size    : %lu\n",(ee_u32)results[0].size);
+            ^
+core_main.c:288:12: warning: format %lu expects argument of type long unsigned int, but argument 2 has type unsigned int [-Wformat=]
+  ee_printf("Total ticks      : %lu\n",(ee_u32)total_time);
+            ^
+core_main.c:303:12: warning: format %lu expects argument of type long unsigned int, but argument 2 has type unsigned int [-Wformat=]
+  ee_printf("Iterations       : %lu\n",(ee_u32)default_num_contexts*results[0].iterations);
+            ^
+
+2021-01-20 12:39:50,741 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /opt/pkb/coremark-1.01/run1.log
+2021-01-20 12:39:50,945 414351e2 MainThread coremark(1/1) vm_util.py:405 INFO     Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /opt/pkb/coremark-1.01/run1.log}
+ReturnCode:0
+STDOUT: 2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 124828
+Total time (secs): 124.828000
+Iterations/Sec   : 16022.046336
+Iterations       : 2000000
+Compiler version : GCC5.4.0 20160609
+Compiler flags   : -O2 -g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1  -lrt -lpthread
+Parallel PThreads : 2
+Memory location  : Please put data memory location here
+			(e.g. code in flash, data on heap etc)
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[1]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[1]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[1]crcstate      : 0x8e3a
+[0]crcfinal      : 0x988c
+[1]crcfinal      : 0x988c
+Correct operation validated. See readme.txt for run and reporting rules.
+CoreMark 1.0 : 16022.046336 / GCC5.4.0 20160609 -O2 -g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1  -lrt -lpthread / Heap / 2:PThreads
+
+STDERR: 
+2021-01-20 12:39:50,947 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /proc/cpuinfo
+2021-01-20 12:39:51,148 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m cat /proc/cpuinfo}
+ReturnCode:0
+STDOUT: processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0xffffffff
+cpu MHz		: 2095.077
+cache size	: 36608 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 21
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti tpr_shadow vnmi ept vpid fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt avx512cd avx512bw avx512vl xsaveopt xsavec xsaves md_clear
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 4190.15
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0xffffffff
+cpu MHz		: 2095.077
+cache size	: 36608 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 21
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti tpr_shadow vnmi ept vpid fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt avx512cd avx512bw avx512vl xsaveopt xsavec xsaves md_clear
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 4190.15
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+STDERR: 
+2021-01-20 12:39:51,150 414351e2 Thread-51 coremark(1/1) vm_util.py:353 INFO     Running: ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo grep . /sys/devices/system/cpu/vulnerabilities/*
+2021-01-20 12:39:51,391 414351e2 Thread-51 coremark(1/1) vm_util.py:407 DEBUG    Ran: {ssh -A -p 22 perfkit@40.70.60.143 -2 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o PreferredAuthentications=publickey -o PasswordAuthentication=no -o ConnectTimeout=5 -o GSSAPIAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -i /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_keyfile -o ControlPath="/tmp/perfkitbenchmarker/runs/414351e2/ssh/%h" -o ControlMaster=auto -o ControlPersist=30m sudo grep . /sys/devices/system/cpu/vulnerabilities/*}
+ReturnCode:0
+STDOUT: /sys/devices/system/cpu/vulnerabilities/itlb_multihit:KVM: Mitigation: Split huge pages
+/sys/devices/system/cpu/vulnerabilities/l1tf:Mitigation: PTE Inversion; VMX: conditional cache flushes, SMT vulnerable
+/sys/devices/system/cpu/vulnerabilities/mds:Mitigation: Clear CPU buffers; SMT Host state unknown
+/sys/devices/system/cpu/vulnerabilities/meltdown:Mitigation: PTI
+/sys/devices/system/cpu/vulnerabilities/spec_store_bypass:Vulnerable
+/sys/devices/system/cpu/vulnerabilities/spectre_v1:Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+/sys/devices/system/cpu/vulnerabilities/spectre_v2:Mitigation: Full generic retpoline, STIBP: disabled, RSB filling
+/sys/devices/system/cpu/vulnerabilities/srbds:Not affected
+/sys/devices/system/cpu/vulnerabilities/tsx_async_abort:Mitigation: Clear CPU buffers; SMT Host state unknown
+
+STDERR: 
+2021-01-20 12:39:51,416 414351e2 MainThread coremark(1/1) pkb.py:812 INFO     Cleaning up benchmark coremark
+2021-01-20 12:39:51,416 414351e2 MainThread coremark(1/1) pkb.py:831 INFO     Tearing down resources for benchmark coremark
+2021-01-20 12:39:51,419 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: az group delete --yes --name pkb414351e2-coremark0
+2021-01-20 12:43:29,830 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {az group delete --yes --name pkb414351e2-coremark0}
+ReturnCode:0
+STDOUT: 
+STDERR: 
+2021-01-20 12:43:29,830 414351e2 MainThread coremark(1/1) vm_util.py:353 INFO     Running: az group show --name pkb414351e2-coremark0
+2021-01-20 12:43:30,577 414351e2 MainThread coremark(1/1) vm_util.py:407 DEBUG    Ran: {az group show --name pkb414351e2-coremark0}
+ReturnCode:3
+STDOUT: 
+STDERR: ResourceNotFoundError: Resource group 'pkb414351e2-coremark0' could not be found.
+
+2021-01-20 12:43:30,578 414351e2 MainThread publisher.py:455 INFO     
+-------------------------PerfKitBenchmarker Complete Results-------------------------
+2021-01-20 12:43:30,579 414351e2 MainThread publisher.py:457 INFO     {'metadata': {'/dev/sda': 32213303296,
+              '/dev/sdb': 17179869184,
+              'accelerated_networking': False,
+              'boot_disk_size': None,
+              'boot_disk_type': 'Standard_LRS',
+              'cloud': 'Azure',
+              'dedicated_host': False,
+              'image': 'Canonical:UbuntuServer:16.04-LTS:latest',
+              'iterations': 2000000,
+              'iterations_per_cpu': 1000000,
+              'kernel_release': '4.15.0-1103-azure',
+              'machine_type': 'Standard_D2s_v3',
+              'num_cpus': 2,
+              'numa_node_count': 1,
+              'os_info': 'Ubuntu 16.04.7 LTS',
+              'os_type': 'ubuntu1604',
+              'parallelism_method': 'PTHREAD',
+              'perfkitbenchmarker_version': 'v1.12.0-2274-g57e60ab9',
+              'placement_group_strategy': 'none',
+              'preemptible': False,
+              'run_number': 0,
+              'size': 666,
+              'summary': 'CoreMark 1.0 : 16022.046336 / GCC5.4.0 20160609 -O2 '
+                         '-g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD '
+                         '-DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1  -lrt '
+                         '-lpthread / Heap / 2:PThreads',
+              'tcp_congestion_control': 'cubic',
+              'total_ticks': 124828,
+              'total_time_sec': 124.828,
+              'vm_count': 1,
+              'zone': 'eastus2'},
+ 'metric': 'Coremark Score',
+ 'official': False,
+ 'owner': 'mario',
+ 'product_name': 'PerfKitBenchmarker',
+ 'run_uri': '414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb',
+ 'sample_uri': 'ac64593a-29d2-4f5b-8f5d-425bbef5cbb6',
+ 'test': 'coremark',
+ 'timestamp': 1611142790.9475772,
+ 'unit': '',
+ 'value': 16022.046336}
+2021-01-20 12:43:30,580 414351e2 MainThread publisher.py:457 INFO     {'metadata': {'/dev/sda': 32213303296,
+              '/dev/sdb': 17179869184,
+              'Architecture': 'x86_64',
+              'BogoMIPS': '4190.15',
+              'Byte Order': 'Little Endian',
+              'CPU MHz': '2095.077',
+              'CPU family': '6',
+              'CPU op-mode(s)': '32-bit, 64-bit',
+              'CPU(s)': '2',
+              'Core(s) per socket': '1',
+              'Flags': 'fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge '
+                       'mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht '
+                       'syscall nx pdpe1gb rdtscp lm constant_tsc rep_good '
+                       'nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 '
+                       'pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c '
+                       'rdrand hypervisor lahf_lm abm 3dnowprefetch '
+                       'invpcid_single pti tpr_shadow vnmi ept vpid fsgsbase '
+                       'bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f '
+                       'avx512dq rdseed adx smap clflushopt avx512cd avx512bw '
+                       'avx512vl xsaveopt xsavec xsaves md_clear',
+              'Hypervisor vendor': 'Microsoft',
+              'L1d cache': '32K',
+              'L1i cache': '32K',
+              'L2 cache': '1024K',
+              'L3 cache': '36608K',
+              'Model': '85',
+              'Model name': 'Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz',
+              'NUMA node(s)': '1',
+              'NUMA node0 CPU(s)': '0,1',
+              'On-line CPU(s) list': '0,1',
+              'Socket(s)': '1',
+              'Stepping': '4',
+              'Thread(s) per core': '2',
+              'Vendor ID': 'GenuineIntel',
+              'Virtualization': 'VT-x',
+              'Virtualization type': 'full',
+              'accelerated_networking': False,
+              'boot_disk_size': None,
+              'boot_disk_type': 'Standard_LRS',
+              'cloud': 'Azure',
+              'dedicated_host': False,
+              'image': 'Canonical:UbuntuServer:16.04-LTS:latest',
+              'kernel_release': '4.15.0-1103-azure',
+              'machine_type': 'Standard_D2s_v3',
+              'node_name': 'pkb-414351e2-0',
+              'num_cpus': 2,
+              'numa_node_count': 1,
+              'os_info': 'Ubuntu 16.04.7 LTS',
+              'os_type': 'ubuntu1604',
+              'perfkitbenchmarker_version': 'v1.12.0-2274-g57e60ab9',
+              'placement_group_strategy': 'none',
+              'preemptible': False,
+              'tcp_congestion_control': 'cubic',
+              'vm_count': 1,
+              'zone': 'eastus2'},
+ 'metric': 'lscpu',
+ 'official': False,
+ 'owner': 'mario',
+ 'product_name': 'PerfKitBenchmarker',
+ 'run_uri': '414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb',
+ 'sample_uri': '35ee694d-2ede-45cf-a8c7-215f7c79f318',
+ 'test': 'coremark',
+ 'timestamp': 1611142790.9477203,
+ 'unit': '',
+ 'value': 0.0}
+2021-01-20 12:43:30,581 414351e2 MainThread publisher.py:457 INFO     {'metadata': {'/dev/sda': 32213303296,
+              '/dev/sdb': 17179869184,
+              'accelerated_networking': False,
+              'address sizes': '46 bits physical, 48 bits virtual',
+              'bogomips': '4190.15',
+              'boot_disk_size': None,
+              'boot_disk_type': 'Standard_LRS',
+              'bugs': 'cpu_meltdown itlb_multihit l1tf mds spec_store_bypass '
+                      'spectre_v1 spectre_v2 swapgs taa',
+              'cache size': '36608 KB',
+              'cache_alignment': '64',
+              'clflush size': '64',
+              'cloud': 'Azure',
+              'cpu MHz': '2095.077',
+              'cpu cores': '1',
+              'cpu family': '6',
+              'cpuid level': '21',
+              'dedicated_host': False,
+              'flags': '3dnowprefetch abm adx aes apic avx avx2 avx512bw '
+                       'avx512cd avx512dq avx512f avx512vl bmi1 bmi2 clflush '
+                       'clflushopt cmov constant_tsc cpuid cx16 cx8 de ept '
+                       'erms f16c fma fpu fsgsbase fxsr hle ht hypervisor '
+                       'invpcid invpcid_single lahf_lm lm mca mce md_clear mmx '
+                       'movbe mpx msr mtrr nopl nx pae pat pcid pclmulqdq '
+                       'pdpe1gb pge pni popcnt pse pse36 pti rdrand rdseed '
+                       'rdtscp rep_good rtm sep smap smep ss sse sse2 sse4_1 '
+                       'sse4_2 ssse3 syscall tpr_shadow tsc vme vmx vnmi vpid '
+                       'xsave xsavec xsaveopt xsaves xtopology',
+              'fpu': 'yes',
+              'fpu_exception': 'yes',
+              'image': 'Canonical:UbuntuServer:16.04-LTS:latest',
+              'kernel_release': '4.15.0-1103-azure',
+              'machine_type': 'Standard_D2s_v3',
+              'microcode': '0xffffffff',
+              'model': '85',
+              'model name': 'Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz',
+              'node_name': 'pkb-414351e2-0',
+              'num_cpus': 2,
+              'numa_node_count': 1,
+              'os_info': 'Ubuntu 16.04.7 LTS',
+              'os_type': 'ubuntu1604',
+              'perfkitbenchmarker_version': 'v1.12.0-2274-g57e60ab9',
+              'placement_group_strategy': 'none',
+              'power management': '',
+              'preemptible': False,
+              'proccpu': 'address sizes,bogomips,bugs,cache '
+                         'size,cache_alignment,clflush size,cpu MHz,cpu '
+                         'cores,cpu family,cpuid '
+                         'level,flags,fpu,fpu_exception,microcode,model,model '
+                         'name,power management,siblings,stepping,vendor_id,wp',
+              'siblings': '2',
+              'stepping': '4',
+              'tcp_congestion_control': 'cubic',
+              'vendor_id': 'GenuineIntel',
+              'vm_count': 1,
+              'wp': 'yes',
+              'zone': 'eastus2'},
+ 'metric': 'proccpu',
+ 'official': False,
+ 'owner': 'mario',
+ 'product_name': 'PerfKitBenchmarker',
+ 'run_uri': '414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb',
+ 'sample_uri': 'b6a6e7db-62f7-4b56-b48a-a0348221906f',
+ 'test': 'coremark',
+ 'timestamp': 1611142791.1495545,
+ 'unit': '',
+ 'value': 0.0}
+2021-01-20 12:43:30,582 414351e2 MainThread publisher.py:457 INFO     {'metadata': {'/dev/sda': 32213303296,
+              '/dev/sdb': 17179869184,
+              'accelerated_networking': False,
+              'boot_disk_size': None,
+              'boot_disk_type': 'Standard_LRS',
+              'cloud': 'Azure',
+              'dedicated_host': False,
+              'image': 'Canonical:UbuntuServer:16.04-LTS:latest',
+              'kernel_release': '4.15.0-1103-azure',
+              'machine_type': 'Standard_D2s_v3',
+              'node_name': 'pkb-414351e2-0',
+              'num_cpus': 2,
+              'numa_node_count': 1,
+              'os_info': 'Ubuntu 16.04.7 LTS',
+              'os_type': 'ubuntu1604',
+              'perfkitbenchmarker_version': 'v1.12.0-2274-g57e60ab9',
+              'placement_group_strategy': 'none',
+              'preemptible': False,
+              'proc_0': 'apicid=0;core id=0;initial apicid=0;physical id=0',
+              'proc_1': 'apicid=1;core id=0;initial apicid=1;physical id=0',
+              'tcp_congestion_control': 'cubic',
+              'vm_count': 1,
+              'zone': 'eastus2'},
+ 'metric': 'proccpu_mapping',
+ 'official': False,
+ 'owner': 'mario',
+ 'product_name': 'PerfKitBenchmarker',
+ 'run_uri': '414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb',
+ 'sample_uri': '36e0a1e8-7f1d-46be-a64a-c1a3a35c7229',
+ 'test': 'coremark',
+ 'timestamp': 1611142791.1495874,
+ 'unit': '',
+ 'value': 0.0}
+2021-01-20 12:43:30,583 414351e2 MainThread publisher.py:457 INFO     {'metadata': {'/dev/sda': 32213303296,
+              '/dev/sdb': 17179869184,
+              'accelerated_networking': False,
+              'boot_disk_size': None,
+              'boot_disk_type': 'Standard_LRS',
+              'cloud': 'Azure',
+              'dedicated_host': False,
+              'image': 'Canonical:UbuntuServer:16.04-LTS:latest',
+              'kernel_release': '4.15.0-1103-azure',
+              'machine_type': 'Standard_D2s_v3',
+              'mitigation_itlb_multihit': 'KVM:Split huge pages',
+              'mitigation_l1tf': 'PTE Inversion; VMX: conditional cache '
+                                 'flushes, SMT vulnerable',
+              'mitigation_mds': 'Clear CPU buffers; SMT Host state unknown',
+              'mitigation_meltdown': 'PTI',
+              'mitigation_spectre_v1': 'usercopy/swapgs barriers and __user '
+                                       'pointer sanitization',
+              'mitigation_spectre_v2': 'Full generic retpoline, STIBP: '
+                                       'disabled, RSB filling',
+              'mitigation_tsx_async_abort': 'Clear CPU buffers; SMT Host state '
+                                            'unknown',
+              'mitigations': 'itlb_multihit,l1tf,mds,meltdown,spectre_v1,spectre_v2,tsx_async_abort',
+              'notaffecteds': 'srbds',
+              'num_cpus': 2,
+              'numa_node_count': 1,
+              'os_info': 'Ubuntu 16.04.7 LTS',
+              'os_type': 'ubuntu1604',
+              'perfkitbenchmarker_version': 'v1.12.0-2274-g57e60ab9',
+              'placement_group_strategy': 'none',
+              'preemptible': False,
+              'tcp_congestion_control': 'cubic',
+              'vm_count': 1,
+              'vm_name': 'pkb-414351e2-0',
+              'vulnerabilities': 'spec_store_bypass',
+              'vulnerability_spec_store_bypass': '',
+              'zone': 'eastus2'},
+ 'metric': 'cpu_vuln',
+ 'official': False,
+ 'owner': 'mario',
+ 'product_name': 'PerfKitBenchmarker',
+ 'run_uri': '414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb',
+ 'sample_uri': '33f3579a-a633-4b5d-9c28-405be4f98983',
+ 'test': 'coremark',
+ 'timestamp': 1611142791.392143,
+ 'unit': '',
+ 'value': 0.0}
+2021-01-20 12:43:30,583 414351e2 MainThread publisher.py:457 INFO     {'metadata': {'/dev/sda': 32213303296,
+              '/dev/sdb': 17179869184,
+              'accelerated_networking': False,
+              'boot_disk_size': None,
+              'boot_disk_type': 'Standard_LRS',
+              'cloud': 'Azure',
+              'dedicated_host': False,
+              'image': 'Canonical:UbuntuServer:16.04-LTS:latest',
+              'kernel_release': '4.15.0-1103-azure',
+              'machine_type': 'Standard_D2s_v3',
+              'num_cpus': 2,
+              'numa_node_count': 1,
+              'os_info': 'Ubuntu 16.04.7 LTS',
+              'os_type': 'ubuntu1604',
+              'perfkitbenchmarker_version': 'v1.12.0-2274-g57e60ab9',
+              'placement_group_strategy': 'none',
+              'preemptible': False,
+              'tcp_congestion_control': 'cubic',
+              'vm_count': 1,
+              'zone': 'eastus2'},
+ 'metric': 'End to End Runtime',
+ 'official': False,
+ 'owner': 'mario',
+ 'product_name': 'PerfKitBenchmarker',
+ 'run_uri': '414351e2-3c426dd5-dbd1-4b89-84f0-88e6ec6d9ebb',
+ 'sample_uri': 'a5be9246-96e1-4939-a01f-307e09dce2dc',
+ 'test': 'coremark',
+ 'timestamp': 1611143010.5780103,
+ 'unit': 'seconds',
+ 'value': 751.1839191913605}
+2021-01-20 12:43:30,584 414351e2 MainThread publisher.py:431 DEBUG    Pretty-printing results to <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>:
+
+-------------------------PerfKitBenchmarker Results Summary-------------------------
+COREMARK:
+  Coremark Score                    16022.046336                                (iterations="2000000" iterations_per_cpu="1000000" parallelism_method="PTHREAD" run_number="0" size="666" summary="CoreMark 1.0 : 16022.046336 / GCC5.4.0 20160609 -O2 -g -O2 -DMULTITHREAD=2 -DUSE_PTHREAD -DPERFORMANCE_RUN=1 -DPERFORMANCE_RUN=1  -lrt -lpthread / Heap / 2:PThreads" total_ticks="124828" total_time_sec="124.828")
+  lscpu                                 0.000000                                (Architecture="x86_64" BogoMIPS="4190.15" Byte Order="Little Endian" CPU MHz="2095.077" CPU family="6" CPU op-mode(s)="32-bit, 64-bit" CPU(s)="2" Core(s) per socket="1" Flags="fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti tpr_shadow vnmi ept vpid fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt avx512cd avx512bw avx512vl xsaveopt xsavec xsaves md_clear" Hypervisor vendor="Microsoft" L1d cache="32K" L1i cache="32K" L2 cache="1024K" L3 cache="36608K" Model="85" Model name="Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz" NUMA node(s)="1" NUMA node0 CPU(s)="0,1" On-line CPU(s) list="0,1" Socket(s)="1" Stepping="4" Thread(s) per core="2" Vendor ID="GenuineIntel" Virtualization="VT-x" Virtualization type="full" node_name="pkb-414351e2-0")
+  proccpu                               0.000000                                (address sizes="46 bits physical, 48 bits virtual" bogomips="4190.15" bugs="cpu_meltdown itlb_multihit l1tf mds spec_store_bypass spectre_v1 spectre_v2 swapgs taa" cache size="36608 KB" cache_alignment="64" clflush size="64" cpu MHz="2095.077" cpu cores="1" cpu family="6" cpuid level="21" flags="3dnowprefetch abm adx aes apic avx avx2 avx512bw avx512cd avx512dq avx512f avx512vl bmi1 bmi2 clflush clflushopt cmov constant_tsc cpuid cx16 cx8 de ept erms f16c fma fpu fsgsbase fxsr hle ht hypervisor invpcid invpcid_single lahf_lm lm mca mce md_clear mmx movbe mpx msr mtrr nopl nx pae pat pcid pclmulqdq pdpe1gb pge pni popcnt pse pse36 pti rdrand rdseed rdtscp rep_good rtm sep smap smep ss sse sse2 sse4_1 sse4_2 ssse3 syscall tpr_shadow tsc vme vmx vnmi vpid xsave xsavec xsaveopt xsaves xtopology" fpu="yes" fpu_exception="yes" microcode="0xffffffff" model="85" model name="Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz" node_name="pkb-414351e2-0" power management="" proccpu="address sizes,bogomips,bugs,cache size,cache_alignment,clflush size,cpu MHz,cpu cores,cpu family,cpuid level,flags,fpu,fpu_exception,microcode,model,model name,power management,siblings,stepping,vendor_id,wp" siblings="2" stepping="4" vendor_id="GenuineIntel" wp="yes")
+  proccpu_mapping                       0.000000                                (node_name="pkb-414351e2-0" proc_0="apicid=0;core id=0;initial apicid=0;physical id=0" proc_1="apicid=1;core id=0;initial apicid=1;physical id=0")
+  cpu_vuln                              0.000000                                (mitigation_itlb_multihit="KVM:Split huge pages" mitigation_l1tf="PTE Inversion; VMX: conditional cache flushes, SMT vulnerable" mitigation_mds="Clear CPU buffers; SMT Host state unknown" mitigation_meltdown="PTI" mitigation_spectre_v1="usercopy/swapgs barriers and __user pointer sanitization" mitigation_spectre_v2="Full generic retpoline, STIBP: disabled, RSB filling" mitigation_tsx_async_abort="Clear CPU buffers; SMT Host state unknown" mitigations="itlb_multihit,l1tf,mds,meltdown,spectre_v1,spectre_v2,tsx_async_abort" notaffecteds="srbds" vm_name="pkb-414351e2-0" vulnerabilities="spec_store_bypass" vulnerability_spec_store_bypass="")
+  End to End Runtime                  751.183919 seconds                       
+
+-------------------------
+For all tests: /dev/sda="32213303296" /dev/sdb="17179869184" accelerated_networking="False" boot_disk_size="None" boot_disk_type="Standard_LRS" cloud="Azure" dedicated_host="False" image="Canonical:UbuntuServer:16.04-LTS:latest" kernel_release="4.15.0-1103-azure" machine_type="Standard_D2s_v3" num_cpus="2" numa_node_count="1" os_info="Ubuntu 16.04.7 LTS" os_type="ubuntu1604" perfkitbenchmarker_version="v1.12.0-2274-g57e60ab9" placement_group_strategy="none" preemptible="False" tcp_congestion_control="cubic" vm_count="1" zone="eastus2"
+
+2021-01-20 12:43:30,584 414351e2 MainThread publisher.py:487 INFO     Publishing 6 samples to /tmp/perfkitbenchmarker/runs/414351e2/perfkitbenchmarker_results.json
+2021-01-20 12:43:30,585 414351e2 MainThread pkb.py:1227 INFO     Benchmark run statuses:
+------------------------------------------------
+Name      UID        Status     Failed Substatus
+------------------------------------------------
+coremark  coremark0  SUCCEEDED                  
+------------------------------------------------
+Success rate: 100.00% (1/1)
+2021-01-20 12:43:30,585 414351e2 MainThread pkb.py:1229 INFO     Complete logs can be found at: /tmp/perfkitbenchmarker/runs/414351e2/pkb.log
+2021-01-20 12:43:30,585 414351e2 MainThread pkb.py:1231 INFO     Completion statuses can be found at: /tmp/perfkitbenchmarker/runs/414351e2/completion_statuses.json

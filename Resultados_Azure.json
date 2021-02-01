@@ -1,0 +1,47 @@
+{
+  "Coremark" : {
+    
+    "s_v3": 16022.046336,
+    "v3": 20342.361952,
+    "v4":29990.85279
+  },
+  "Data_analytics":{
+    "v4":116.273,
+    "s_v3":143.531,
+    "v3": 151.648,
+    "Segundos":[]
+  },
+  
+  "Data_caching":{
+    "Metrics":["Requests per second","Average latency","90th percentile latency","95th percentile latency","99th percentile latency","Average outstanding requests per requester"],
+    "Medida" : ["req/s","ms","ms","ms","ms","reqs"],
+    "s_v3" : [18067.8,1.029888,3.0,4.6,7.6,2.0],
+    "v3":[18086.6,1.230251,3.4,5.0,8.0,4.0],
+    "v4":[18084.1,1.272931,3.8,5.9,8.6,8.0]
+  },
+  
+  "HPCC":{
+    "Metrics":["MPIRandomAccess_time", "MPIRandomAccess_CheckTime", "MPIRandomAccess_ExeUpdates", "MPIRandomAccess_GUPs", "StarRandomAccess_GUPs", "SingleRandomAccess_GUPs", "MPIRandomAccess_LCG_time", "MPIRandomAccess_LCG_CheckTime", "MPIRandomAccess_LCG_ExeUpdates", "MPIRandomAccess_LCG_GUPs", "StarRandomAccess_LCG_GUPs", "SingleRandomAccess_LCG_GUPs", "PTRANS_GBs", "PTRANS_time", "StarDGEMM_Gflops", "SingleDGEMM_Gflops", "StarSTREAM_Copy", "StarSTREAM_Scale", "StarSTREAM_Add", "StarSTREAM_Triad", "SingleSTREAM_Copy", "SingleSTREAM_Scale", "SingleSTREAM_Add", "SingleSTREAM_Triad", "MPIFFT_Gflops", "MPIFFT_time0", "MPIFFT_time1", "MPIFFT_time2", "MPIFFT_time3", "MPIFFT_time4", "MPIFFT_time5", "MPIFFT_time6", "StarFFT_Gflops", "SingleFFT_Gflops", "MaxPingPongLatency_usec", "RandomlyOrderedRingLatency_usec", "MinPingPongBandwidth_GBytes", "NaturallyOrderedRingBandwidth_GBytes", "RandomlyOrderedRingBandwidth_GBytes", "MinPingPongLatency_usec", "AvgPingPongLatency_usec", "MaxPingPongBandwidth_GBytes", "AvgPingPongBandwidth_GBytes", "NaturallyOrderedRingLatency_usec", "HPL_Tflops", "HPL_time"],
+    "Medida":["seconds", "seconds", "updates", "GUP/s", "GUP/s", "GUP/s", "seconds", "seconds", "updates", "GUP/s", "GUP/s", "GUP/s", "GB/s", "seconds", "Gflop/s", "Gflop/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "Gflop/s", "seconds", "seconds", "seconds", "seconds", "seconds", "seconds", "seconds", "Gflop/s", "Gflop/s", "usec", "usec", "GB", "GB", "GB", "usec", "usec", "GB", "GB", "usec", "Tflop/s", "seconds"],
+    "s_v3":[60.5978, 6.83117, 122359344.0, 0.00201921, 0.0380878, 0.0344922, 60.8045, 7.3525, 121526900.0, 0.00199865, 0.0395037, 0.0369492, 0.207619, 15.0696, 18.5787, 22.8665, 2.74702, 5.28041, 5.67764, 5.69206, 4.62878, 7.55065, 7.7206, 7.57069, 0.97877, 8e-07, 5.03816, 0.919008, 4.77481, 2.58792, 5.01481, 3e-07, 1.54343, 1.65358, 134.69, 53.667, 0.214609, 0.161939, 0.0944917, 2.67506, 76.1812, 8.39793, 2.68299, 57.5529, 0.0624754, 660.282],
+    "v4":[58.532, 14.2669, 214353988.0, 0.00366217, 0.0365861, 0.0695407, 58.5528, 14.2247, 213834092.0, 0.00365199, 0.0468672, 0.0362284, 0.172519, 16.9735, 19.4903, 28.56, 8.19896, 5.69384, 6.02113, 6.0617, 12.5936, 10.155, 10.6173, 10.6448, 0.78195, 1.1e-06, 6.14505, 1.63026, 6.4567, 1.93733, 6.89946, 4e-07, 0.924161, 1.28725, 138.728, 67.2407, 0.180301, 0.122615, 0.0823341, 1.50625, 74.8084, 13.1837, 4.26641, 65.0217, 0.0683735, 603.324],
+    "v3":[59.7509, 13.7028, 106242700.0, 0.00177809, 0.0207185, 0.0188912, 59.6434, 12.2869, 106501280.0, 0.00178563, 0.0213654, 0.0192457, 0.157492, 19.8056, 17.6712, 17.4036, 7.36573, 4.81959, 5.47708, 5.42792, 13.6605, 8.86193, 9.68835, 9.33329, 0.85776, 1.1e-06, 5.28528, 1.05621, 5.44225, 3.00626, 6.10632, 3e-07, 1.21909, 1.31807, 173.605, 76.0133, 0.139503, 0.111426, 0.103046, 2.8, 104.693, 7.33411, 2.46543, 70.7302, 0.0607577, 678.949]
+  },
+  
+  "Mongodb":{
+    "Metrics":["overall RunTime", "overall Throughput", "insert Operations", "insert MinLatency", "insert MaxLatency", "insert Return=OK", "overall RunTime", "overall Throughput", "read Operations", "read MinLatency", "read MaxLatency", "read Return=OK", "update Operations", "update MinLatency", "update MaxLatency", "update Return=OK", "overall RunTime", "overall Throughput", "read Operations", "read MinLatency", "read MaxLatency", "read Return=OK", "update Operations", "update MinLatency", "update MaxLatency", "update Return=OK"],
+    "Medida":["ms", "ops/sec", "", "ms", "ms", "", "ms", "ops/sec", "", "ms", "ms", "", "", "ms", "ms", "", "ms", "ops/sec", "", "ms", "ms", "", "", "ms", "ms", ""],
+    "s_v3":[482620.0, 2072.023538187394, 1000000.0, 0.236, 37531.396, 1000000.0, 423137.0, 2363.3007749263243, 499924.0, 0.194, 9011.837, 499924.0, 500076.0, 0.21, 23251.334, 500076.0, 77568.0, 12891.914191419142, 950351.0, 0.159, 2896.811, 950351.0, 49649.0, 0.229, 4035.276, 49649.0],
+    "v3":[60422.0, 3839.9213584105796, 1000000.0, 0.389, 7763.304, 1000000.0, 600154.0, 1666.2389986570113, 500051.0, 0.257, 16044.839, 500051.0, 499949.0, 0.32, 16048.048, 499949.0, 225014.0, 4444.16791844063, 949733.0, 0.226, 7798.711, 949733.0, 50267.0, 0.347, 9078.405, 50267.0],
+    "v4":[496782.0, 2012.9553808310286, 1000000.0, 0.24, 38214.169, 1000000.0, 354820.0, 2818.3304210585648, 499030.0, 0.171, 7074.215, 499030.0, 500970.0, 0.206, 9032.848, 500970.0, 128699.0, 7770.068143497619, 950359.0, 0.143, 5101.396, 950359.0, 49641.0, 0.212, 5100.001, 49641.0]
+  },
+  
+  "Netperf":{
+    "Metrics":["TCP_RR_Transaction_Rate", "TCP_RR_Latency_Histogram", "TCP_RR_Latency_p50", "TCP_RR_Latency_p90", "TCP_RR_Latency_p99", "TCP_RR_Latency_min", "TCP_RR_Latency_max", "TCP_RR_Latency_stddev", "TCP_RR_Transaction_Rate", "TCP_RR_Latency_Histogram", "TCP_RR_Latency_p50", "TCP_RR_Latency_p90", "TCP_RR_Latency_p99", "TCP_RR_Latency_min", "TCP_RR_Latency_max", "TCP_RR_Latency_stddev", "TCP_CRR_Transaction_Rate", "TCP_CRR_Latency_Histogram", "TCP_CRR_Latency_p50", "TCP_CRR_Latency_p90", "TCP_CRR_Latency_p99", "TCP_CRR_Latency_min", "TCP_CRR_Latency_max", "TCP_CRR_Latency_stddev", "TCP_CRR_Transaction_Rate", "TCP_CRR_Latency_Histogram", "TCP_CRR_Latency_p50", "TCP_CRR_Latency_p90", "TCP_CRR_Latency_p99", "TCP_CRR_Latency_min", "TCP_CRR_Latency_max", "TCP_CRR_Latency_stddev", "TCP_STREAM_Throughput", "TCP_STREAM_Throughput", "UDP_RR_Transaction_Rate", "UDP_RR_Latency_Histogram", "UDP_RR_Latency_p50", "UDP_RR_Latency_p90", "UDP_RR_Latency_p99", "UDP_RR_Latency_min", "UDP_RR_Latency_max", "UDP_RR_Latency_stddev", "UDP_RR_Transaction_Rate", "UDP_RR_Latency_Histogram", "UDP_RR_Latency_p50", "UDP_RR_Latency_p90", "UDP_RR_Latency_p99", "UDP_RR_Latency_min", "UDP_RR_Latency_max", "UDP_RR_Latency_stddev", "UDP_STREAM_Throughput", "UDP_STREAM_Throughput"],
+    "Medida":["transactions_per_second", "us", "us", "us", "us", "us", "us", "us", "transactions_per_second", "us", "us", "us", "us", "us", "us", "us", "transactions_per_second", "us", "us", "us", "us", "us", "us", "us", "transactions_per_second", "us", "us", "us", "us", "us", "us", "us", "Mbits/sec", "Mbits/sec", "transactions_per_second", "us", "us", "us", "us", "us", "us", "us", "transactions_per_second", "us", "us", "us", "us", "us", "us", "us", "Mbits/sec", "Mbits/sec"],
+    "s_v3":[4127.52, 0.0, 205.0, 308.0, 647.0, 140.0, 13801.0, 286.36, 4424.94, 0.0, 197.0, 293.0, 523.0, 136.0, 15075.0, 209.61, 865.44, 0.0, 1003.0, 1297.0, 6178.0, 620.0, 31796.0, 946.71, 1033.31, 0.0, 824.0, 1108.0, 5321.0, 485.0, 45660.0, 905.97, 924.45, 923.42, 2609.51, 0.0, 323.0, 448.0, 1374.0, 257.0, 15072.0, 423.65, 4670.36, 0.0, 182.0, 273.0, 543.0, 114.0, 13242.0, 258.39, 946.79, 915.06],
+    "v3":[1428.37, 0.0, 620.0, 987.0, 1908.0, 161.0, 14465.0, 432.89, 1300.0, 0.0, 663.0, 1033.0, 2543.0, 184.0, 11599.0, 508.41, 536.28, 0.0, 1625.0, 2332.0, 6845.0, 894.0, 115778.0, 1338.13, 599.43, 0.0, 1481.0, 2094.0, 6111.0, 704.0, 22132.0, 909.34, 908.25, 891.8, 1112.27, 0.0, 778.0, 1187.0, 3014.0, 408.0, 14903.0, 562.82, 1819.98, 0.0, 454.0, 939.0, 1800.0, 144.0, 11730.0, 434.57, 894.01, 850.1],
+    "v4":[6995.19, 0.0, 123.0, 188.0, 486.0, 80.0, 2181.0, 71.73, 7173.34, 0.0, 113.0, 209.0, 506.0, 75.0, 2110.0, 81.34, 1210.63, 0.0, 736.0, 1031.0, 1709.0, 498.0, 15111.0, 540.12, 1813.57, 0.0, 499.0, 727.0, 1225.0, 312.0, 7981.0, 198.48, 2306.22, 2371.72, 2826.5, 0.0, 297.0, 499.0, 965.0, 246.0, 10493.0, 182.66, 5705.94, 0.0, 132.0, 305.0, 616.0, 86.0, 89634.0, 185.63, 750.81, 546.75]
+  }
+  
+}
