@@ -1,14 +1,14 @@
 {
   "Coremark" : {
     
-    "highcpu": 21926.699045,
-    "highmem": 21974.399824,
-    "standard":21986.720021
+    "n1": 17476.406851,
+    "n2d": 26776.987857,
+    "n2":21986.720021
   },
   "Data_analytics":{
-    "highcpu":117.929,
-    "highmem":97.163,
-    "standard": 97.496,
+    "n1":126.588,
+    "n2d":103.674,
+    "n2": 97.496,
     "Metrics":["seconds"],
     "Medida" : ["s"]
   },
@@ -16,32 +16,25 @@
   "Data_caching":{
     "Metrics":["Requests per second","Average latency","90th percentile latency","95th percentile latency","99th percentile latency","Average outstanding requests per requester"],
     "Medida" : ["req/s","ms","ms","ms","ms","reqs"],
-    "highmem" : [18067.8,1.029888,3.0,4.6,7.6,2.0],
-    "standard":[18086.6,1.230251,3.4,5.0,8.0,4.0]
+    "n2d":[18071.8,0.895595,1.9,5.1, 8.7,4.0],
+    "n2":[18075.6,0.671327,0.9081,4.6,8.3,2.5],
+    "n1":[18088.7,1.035032,2.5,5.9,9.2,2.5]
   },
   
   "HPCC":{
     "Metrics":["MPIRandomAccess_time", "MPIRandomAccess_CheckTime", "MPIRandomAccess_ExeUpdates", "MPIRandomAccess_GUPs", "StarRandomAccess_GUPs", "SingleRandomAccess_GUPs", "MPIRandomAccess_LCG_time", "MPIRandomAccess_LCG_CheckTime", "MPIRandomAccess_LCG_ExeUpdates", "MPIRandomAccess_LCG_GUPs", "StarRandomAccess_LCG_GUPs", "SingleRandomAccess_LCG_GUPs", "PTRANS_GBs", "PTRANS_time", "StarDGEMM_Gflops", "SingleDGEMM_Gflops", "StarSTREAM_Copy", "StarSTREAM_Scale", "StarSTREAM_Add", "StarSTREAM_Triad", "SingleSTREAM_Copy", "SingleSTREAM_Scale", "SingleSTREAM_Add", "SingleSTREAM_Triad", "MPIFFT_Gflops", "MPIFFT_time0", "MPIFFT_time1", "MPIFFT_time2", "MPIFFT_time3", "MPIFFT_time4", "MPIFFT_time5", "MPIFFT_time6", "StarFFT_Gflops", "SingleFFT_Gflops", "MaxPingPongLatency_usec", "RandomlyOrderedRingLatency_usec", "MinPingPongBandwidth_GBytes", "NaturallyOrderedRingBandwidth_GBytes", "RandomlyOrderedRingBandwidth_GBytes", "MinPingPongLatency_usec", "AvgPingPongLatency_usec", "MaxPingPongBandwidth_GBytes", "AvgPingPongBandwidth_GBytes", "NaturallyOrderedRingLatency_usec", "HPL_Tflops", "HPL_time"],
     "Medida":["seconds", "seconds", "updates", "GUP/s", "GUP/s", "GUP/s", "seconds", "seconds", "updates", "GUP/s", "GUP/s", "GUP/s", "GB/s", "seconds", "Gflop/s", "Gflop/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "Gflop/s", "seconds", "seconds", "seconds", "seconds", "seconds", "seconds", "seconds", "Gflop/s", "Gflop/s", "usec", "usec", "GB", "GB", "GB", "usec", "usec", "GB", "GB", "usec", "Tflop/s", "seconds"],
-    "highmem":[9.4918, 7.62196, 181267096.0, 0.00304693, 0.01262, 0.0184435, 59.6231, 7.44397, 182231072.0, 0.00305638, 0.0131605, 0.0183734, 0.617902, 10.5961, 19.3994, 20.7274, 3.01116, 6.49164, 6.68937, 6.70247, 4.85802, 9.17354, 9.96939, 9.55614, 2.88478, 4.22e-07, 2.57541, 1.56048, 1.77307, 4.74199, 2.05294, 3.9e-07, 1.56204, 1.38628, 31.4854, 30.8301, 0.526959, 0.812524, 0.938434, 1.82125, 20.9221, 7.86398, 3.06828, 32.0257, 0.0750307, 1664.33],
-    "highcpu":[57.1661, 5.0766, 173197636.0, 0.00302972, 0.0241985, 0.0263329, 59.4457, 5.27362, 179919928.0, 0.00302662, 0.0245937, 0.0270728, 0.7123, 0.605003, 19.4427, 21.3434, 3.09015, 6.63942, 6.9269, 6.8935, 4.97166, 9.25894, 10.2581, 9.83126, 2.47617, 6.24e-07, 0.388502, 0.15034, 0.308479, 0.493387, 0.315733, 3.94e-07, 1.55565, 1.58634, 34.5333, 30.7013, 1.00125, 0.919008, 1.03369, 1.80731, 22.693, 8.03553, 3.33643, 31.4185, 0.0697757, 63.6559],
-    "standard":[59.7509, 13.7028, 106242700.0, 0.00177809, 0.0207185, 0.0188912, 59.6434, 12.2869, 106501280.0, 0.00178563, 0.0213654, 0.0192457, 0.157492, 19.8056, 17.6712, 17.4036, 7.36573, 4.81959, 5.47708, 5.42792, 13.6605, 8.86193, 9.68835, 9.33329, 0.85776, 1.1e-06, 5.28528, 1.05621, 5.44225, 3.00626, 6.10632, 3e-07, 1.21909, 1.31807, 173.605, 76.0133, 0.139503, 0.111426, 0.103046, 2.8, 104.693, 7.33411, 2.46543, 70.7302, 0.0607577, 678.949]
-  },
-  
-  "Mongodb":{
-    "Metrics":["overall RunTime", "overall Throughput", "insert Operations", "insert MinLatency", "insert MaxLatency", "insert Return=OK", "overall RunTime", "overall Throughput", "read Operations", "read MinLatency", "read MaxLatency", "read Return=OK", "update Operations", "update MinLatency", "update MaxLatency", "update Return=OK", "overall RunTime", "overall Throughput", "read Operations", "read MinLatency", "read MaxLatency", "read Return=OK", "update Operations", "update MinLatency", "update MaxLatency", "update Return=OK"],
-    "Medida":["ms", "ops/sec", "", "ms", "ms", "", "ms", "ops/sec", "", "ms", "ms", "", "", "ms", "ms", "", "ms", "ops/sec", "", "ms", "ms", "", "", "ms", "ms", ""],
-    "highmem":[76805.0, 13019.985678015753, 1000000.0, 0.155, 1718.14, 1000000.0, 58373.0, 17131.207921470545, 499592.0, 0.098, 933.32, 499592.0, 500408.0, 0.125, 935.227, 500408.0, 32174.0, 31080.997078386274, 949496.0, 0.093, 148.844, 949496.0, 50504.0, 0.159, 278.655, 50504.0],
-    "highcpu":[77037.0, 12980.77547152667, 1000000.0, 0.147, 703.481, 1000000.0, 1510129.0, 662.1950839961354, 499753.0, 0.083, 540.07, 499753.0, 500247.0, 0.105, 518.517, 500247.0, 912034.0, 1096.4503516316279, 950073.0, 0.076, 417.139, 950073.0, 49927.0, 0.166, 390.077, 49927.0],
-    "standard":[75802.0, 13192.264056357351, 1000000.0, 0.147, 956.759, 1000000.0, 55598.0, 17986.25849850714, 499846.0, 0.085, 870.374, 499846.0, 500154.0, 0.122, 871.969, 500154.0, 31478.0, 31768.21907363873, 950077.0, 0.076, 145.9, 950077.0, 49923.0, 0.144, 197.061, 49923.0]
+    "n2d":[59.6444, 9.13914, 193740936.0, 0.00324827, 0.0107487, 0.0373122, 60.0406, 8.94833, 194868900.0, 0.00324562, 0.0117904, 0.0362221, 0.65054, 2.9754, 14.621, 23.2047, 17.4376, 12.707, 12.9359, 13.254, 30.0503, 20.191, 24.0945, 24.2155, 3.5424, 5.2e-07, 1.04207, 0.609728, 0.802323, 1.80471, 0.753249, 5.3e-07, 1.49704, 1.51394, 51.5362, 42.9351, 0.933086, 0.96808, 0.89442, 1.62375, 30.5405, 10.1895, 4.03849, 38.835, 0.052999, 801.234],
+    "n1":[59.9959, 5.26707, 117919008.0, 0.00196545, 0.015233, 0.0239493, 59.6834, 5.282, 117194324.0, 0.0019636, 0.0153423, 0.0252299, 0.552191, 5.42911, 17.2905, 21.0039, 2.8964, 6.30096, 6.54734, 6.56484, 5.4523, 9.67485, 10.6447, 10.3686, 2.49194, 6.88e-07, 1.58272, 0.830258, 1.09917, 2.36343, 1.24673, 4.95e-07, 1.32447, 1.30087, 43.3046, 39.2493, 0.5354, 0.937775, 0.826261, 2.61587, 27.9543, 4.83893, 2.08673, 38.5506, 0.0619033, 628.316],
+    "n2":[60.1739, 6.14535, 185514724.0, 0.00308297, 0.0200129, 0.0266542, 59.9641, 5.92613, 184721184.0, 0.00308053, 0.0210721, 0.0272343, 0.628172, 3.60849, 19.705, 21.3625, 3.10779, 6.76042, 7.04608, 7.09225, 4.96604, 9.36507, 10.4044, 9.89878, 2.87853, 6.73e-07, 1.3046, 0.678575, 0.868437, 2.15812, 1.12553, 5.97e-07, 1.60815, 1.52312, 29.8945, 27.497, 0.885154, 1.38391, 1.2056, 1.81175, 19.5656, 7.37315, 3.09531, 26.9154, 0.0732596, 579.645]
   },
   
   "Netperf":{
     "Metrics":["Throughput", "Throughput", "Throughput", "Throughput"],
     "Medida":["Mbits/sec", "Mbits/sec", "Mbits/sec", "Mbits/sec"],
-    "highmem":[4655.0, 9851.0, 5353.0, 8190.0],
-    "highcpu":[5046.0, 8232.0, 5073.0, 8922.0],
-    "standard":[5562.0, 9668.0, 5510.0, 9082.0]
+    "n2d":[4547.0, 9507.0, 3625.0, 8944.0],
+    "n1":[639.0, 5865.0, 4336.0, 7591.0],
+    "n2":[5562.0, 9668.0, 5510.0, 9082.0]
   }
   
 }

@@ -1,47 +1,40 @@
 {
   "Coremark" : {
     
-    "s_v3": 16022.046336,
+    "v4": 21744.566576,
     "v3": 20342.361952,
-    "v4":29990.85279
+    "asv4":29990.85279
   },
   "Data_analytics":{
-    "v4":116.273,
-    "s_v3":143.531,
+    "asv4":116.273,
+    "v4":101.827,
     "v3": 151.648,
-    "Metrics":["seconds"]
+    "Metrics":["seconds"],
+    "Medida" : ["s"]
   },
   
   "Data_caching":{
     "Metrics":["Requests per second","Average latency","90th percentile latency","95th percentile latency","99th percentile latency","Average outstanding requests per requester"],
     "Medida" : ["req/s","ms","ms","ms","ms","reqs"],
-    "s_v3" : [18067.8,1.029888,3.0,4.6,7.6,2.0],
+    "v4" : [18074.9,1.164106,3.1,4.8,9.8,4.75],
     "v3":[18086.6,1.230251,3.4,5.0,8.0,4.0],
-    "v4":[18084.1,1.272931,3.8,5.9,8.6,8.0]
+    "as_v4":[18084.1,1.272931,3.8,5.9,8.6,8.0]
   },
   
   "HPCC":{
     "Metrics":["MPIRandomAccess_time", "MPIRandomAccess_CheckTime", "MPIRandomAccess_ExeUpdates", "MPIRandomAccess_GUPs", "StarRandomAccess_GUPs", "SingleRandomAccess_GUPs", "MPIRandomAccess_LCG_time", "MPIRandomAccess_LCG_CheckTime", "MPIRandomAccess_LCG_ExeUpdates", "MPIRandomAccess_LCG_GUPs", "StarRandomAccess_LCG_GUPs", "SingleRandomAccess_LCG_GUPs", "PTRANS_GBs", "PTRANS_time", "StarDGEMM_Gflops", "SingleDGEMM_Gflops", "StarSTREAM_Copy", "StarSTREAM_Scale", "StarSTREAM_Add", "StarSTREAM_Triad", "SingleSTREAM_Copy", "SingleSTREAM_Scale", "SingleSTREAM_Add", "SingleSTREAM_Triad", "MPIFFT_Gflops", "MPIFFT_time0", "MPIFFT_time1", "MPIFFT_time2", "MPIFFT_time3", "MPIFFT_time4", "MPIFFT_time5", "MPIFFT_time6", "StarFFT_Gflops", "SingleFFT_Gflops", "MaxPingPongLatency_usec", "RandomlyOrderedRingLatency_usec", "MinPingPongBandwidth_GBytes", "NaturallyOrderedRingBandwidth_GBytes", "RandomlyOrderedRingBandwidth_GBytes", "MinPingPongLatency_usec", "AvgPingPongLatency_usec", "MaxPingPongBandwidth_GBytes", "AvgPingPongBandwidth_GBytes", "NaturallyOrderedRingLatency_usec", "HPL_Tflops", "HPL_time"],
     "Medida":["seconds", "seconds", "updates", "GUP/s", "GUP/s", "GUP/s", "seconds", "seconds", "updates", "GUP/s", "GUP/s", "GUP/s", "GB/s", "seconds", "Gflop/s", "Gflop/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "GB/s", "Gflop/s", "seconds", "seconds", "seconds", "seconds", "seconds", "seconds", "seconds", "Gflop/s", "Gflop/s", "usec", "usec", "GB", "GB", "GB", "usec", "usec", "GB", "GB", "usec", "Tflop/s", "seconds"],
-    "s_v3":[60.5978, 6.83117, 122359344.0, 0.00201921, 0.0380878, 0.0344922, 60.8045, 7.3525, 121526900.0, 0.00199865, 0.0395037, 0.0369492, 0.207619, 15.0696, 18.5787, 22.8665, 2.74702, 5.28041, 5.67764, 5.69206, 4.62878, 7.55065, 7.7206, 7.57069, 0.97877, 8e-07, 5.03816, 0.919008, 4.77481, 2.58792, 5.01481, 3e-07, 1.54343, 1.65358, 134.69, 53.667, 0.214609, 0.161939, 0.0944917, 2.67506, 76.1812, 8.39793, 2.68299, 57.5529, 0.0624754, 660.282],
-    "v4":[58.532, 14.2669, 214353988.0, 0.00366217, 0.0365861, 0.0695407, 58.5528, 14.2247, 213834092.0, 0.00365199, 0.0468672, 0.0362284, 0.172519, 16.9735, 19.4903, 28.56, 8.19896, 5.69384, 6.02113, 6.0617, 12.5936, 10.155, 10.6173, 10.6448, 0.78195, 1.1e-06, 6.14505, 1.63026, 6.4567, 1.93733, 6.89946, 4e-07, 0.924161, 1.28725, 138.728, 67.2407, 0.180301, 0.122615, 0.0823341, 1.50625, 74.8084, 13.1837, 4.26641, 65.0217, 0.0683735, 603.324],
+    "v4":[59.8166, 8.62986, 173426096.0, 0.0028993, 0.030564, 0.0289671, 59.8781, 8.69376, 173151136.0, 0.00289173, 0.0320745, 0.0317943, 0.358017, 8.42244, 18.6398, 18.5395, 2.905, 5.24741, 5.67905, 5.61963, 4.54836, 7.2734, 8.0238, 7.6775, 1.60561, 9e-07, 2.764, 0.850436, 2.41385, 2.45788, 2.60915, 4e-07, 1.62125, 1.68089, 91.8208, 43.4629, 0.219009, 0.2195, 0.209597, 1.98125, 53.1456, 8.41211, 2.80725, 38.7004, 0.068691, 600.536],
+    "asv4":[58.532, 14.2669, 214353988.0, 0.00366217, 0.0365861, 0.0695407, 58.5528, 14.2247, 213834092.0, 0.00365199, 0.0468672, 0.0362284, 0.172519, 16.9735, 19.4903, 28.56, 8.19896, 5.69384, 6.02113, 6.0617, 12.5936, 10.155, 10.6173, 10.6448, 0.78195, 1.1e-06, 6.14505, 1.63026, 6.4567, 1.93733, 6.89946, 4e-07, 0.924161, 1.28725, 138.728, 67.2407, 0.180301, 0.122615, 0.0823341, 1.50625, 74.8084, 13.1837, 4.26641, 65.0217, 0.0683735, 603.324],
     "v3":[59.7509, 13.7028, 106242700.0, 0.00177809, 0.0207185, 0.0188912, 59.6434, 12.2869, 106501280.0, 0.00178563, 0.0213654, 0.0192457, 0.157492, 19.8056, 17.6712, 17.4036, 7.36573, 4.81959, 5.47708, 5.42792, 13.6605, 8.86193, 9.68835, 9.33329, 0.85776, 1.1e-06, 5.28528, 1.05621, 5.44225, 3.00626, 6.10632, 3e-07, 1.21909, 1.31807, 173.605, 76.0133, 0.139503, 0.111426, 0.103046, 2.8, 104.693, 7.33411, 2.46543, 70.7302, 0.0607577, 678.949]
   },
   
-  "Mongodb":{
-    "Metrics":["overall RunTime", "overall Throughput", "insert Operations", "insert MinLatency", "insert MaxLatency", "insert Return=OK", "overall RunTime", "overall Throughput", "read Operations", "read MinLatency", "read MaxLatency", "read Return=OK", "update Operations", "update MinLatency", "update MaxLatency", "update Return=OK", "overall RunTime", "overall Throughput", "read Operations", "read MinLatency", "read MaxLatency", "read Return=OK", "update Operations", "update MinLatency", "update MaxLatency", "update Return=OK"],
-    "Medida":["ms", "ops/sec", "", "ms", "ms", "", "ms", "ops/sec", "", "ms", "ms", "", "", "ms", "ms", "", "ms", "ops/sec", "", "ms", "ms", "", "", "ms", "ms", ""],
-    "s_v3":[482620.0, 2072.023538187394, 1000000.0, 0.236, 37531.396, 1000000.0, 423137.0, 2363.3007749263243, 499924.0, 0.194, 9011.837, 499924.0, 500076.0, 0.21, 23251.334, 500076.0, 77568.0, 12891.914191419142, 950351.0, 0.159, 2896.811, 950351.0, 49649.0, 0.229, 4035.276, 49649.0],
-    "v3":[60422.0, 3839.9213584105796, 1000000.0, 0.389, 7763.304, 1000000.0, 600154.0, 1666.2389986570113, 500051.0, 0.257, 16044.839, 500051.0, 499949.0, 0.32, 16048.048, 499949.0, 225014.0, 4444.16791844063, 949733.0, 0.226, 7798.711, 949733.0, 50267.0, 0.347, 9078.405, 50267.0],
-    "v4":[496782.0, 2012.9553808310286, 1000000.0, 0.24, 38214.169, 1000000.0, 354820.0, 2818.3304210585648, 499030.0, 0.171, 7074.215, 499030.0, 500970.0, 0.206, 9032.848, 500970.0, 128699.0, 7770.068143497619, 950359.0, 0.143, 5101.396, 950359.0, 49641.0, 0.212, 5100.001, 49641.0]
-  },
-  
-  "Netperf":{
+  "Iperf":{
     "Metrics":["Throughput", "Throughput", "Throughput", "Throughput"],
     "Medida":["Mbits/sec", "Mbits/sec", "Mbits/sec", "Mbits/sec"],
-    "s_v3" : [910.0, 893.0, 910.0, 892.0],
+    "v4" : [1700.0, 1924.0, 2012.0, 1765.0],
     "v3":[910.0, 893.0, 925.0, 923.0],
-    "v4":[1848.0, 1846.0, 1832.0, 1840.0]
+    "asv4":[1848.0, 1846.0, 1832.0, 1840.0]
   }
   
 }
